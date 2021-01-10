@@ -1,0 +1,23 @@
+<div class="entrance-top">
+  <div class="home">
+    <h1 class="home-content">最初の画面</h1>
+  </div>
+  <div class="entrance-center">
+    <div class="center-top">
+      <% if user_signed_in? %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path %>
+        <%= link_to "新規登録", new_user_registration_path %>
+      <% end %>
+    </div>
+    <div class="center-bottom">
+    </div>
+  </div>
+</div>
+<div class="bottom-content">
+</div>
+
+
+
