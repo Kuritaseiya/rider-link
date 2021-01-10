@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# USERS
+
+|nickname|string|null: false|
+
+|email|string|null: false|
+
+|password|string|null: false|
+
+|age|string|null: false|
