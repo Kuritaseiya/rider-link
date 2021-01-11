@@ -32,3 +32,21 @@ Things you may want to cover:
 |password|string|null: false|
 
 |age|string|null: false|
+
+has_many :plans
+
+# PLANS
+
+|Prefectures|integer|null: false|
+
+|when|string|null: false|
+
+|conditions|text|null: false|
+
+belongs_to :user
+
+
+
+
+
+
