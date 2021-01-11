@@ -1,0 +1,20 @@
+<h1>ツーリング予定を立てる</h1>
+<%= form_for(@plan, url: plan_index_path) do |f| %>
+<%#= render 'shared/_error_messages' %>
+  <div class="field">
+    <%= f.label :when %><em>(開催日時例・2020-01-01)</em><br />
+    <%= f.text_field :when, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :conditions %><em>(ツーリングについての集合場所、条件または備考等)</em><br />
+    <%= f.text_field :conditions %>
+  </div>
+  <div class="field">
+    <%= f.label :prefectures %><em>(都道府県)</em><br />
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"genre-select"}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit "計画を立てる" %>
+  </div>
+  <%= link_to "ホーム画面へ戻る", root_path%>
+<% end %>
