@@ -1,5 +1,5 @@
 .entrance-top {
-  width: 100%;
+  width: 1500px;
   height: 500px;
 }
 
@@ -23,14 +23,96 @@
   width: 100%;
 }
 
+.user {
+  display: flex;
+  justify-content: center;
+}
+
 .center-top {
   height: 200px;
   width: 100%;
-  background-color: brown;
+}
+
+.user-logout {
+  font-size: 30px;
+}
+
+.user-nickname {
+  font-size: 30px;
+}
+
+.plan-create {
+  font-size: 30px;
+}
+
+.user-login {
+  font-size: 30px;
+}
+
+.user-new {
+  font-size: 30px;
 }
 
 .center-bottom {
   height: 200px;
   width: 100%;
   background-color: green;
+}
+
+.bottom-contents {
+  height: 200px;
+  width: 100%;
+  display: flex;
+
+}
+
+.center {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hp {
+  font-size: 50px;
+}
+
+.honda-hp {
+  height: 70%;
+  width: 20%;
+}
+
+.honda-logo {
+  height: 100%;
+  width: 100%;
+}
+
+.kawasaki-hp {
+  height: 70%;
+  width: 20%;
+}
+
+.kawasaki-logo {
+  height: 100%;
+  width: 100%;
+}
+
+.yamaha-hp {
+  height: 70%;
+  width: 20%;
+}
+
+.yamaha-logo {
+  height: 100%;
+  width: 100%;
+}
+
+.suzuki-hp {
+  height: 70%;
+  width: 20%;
+}
+
+.suzuki-logo {
+  height: 100%;
+  width: 100%;
 }
