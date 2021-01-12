@@ -1,19 +1,39 @@
 <div class="entrance-top">
   <div class="home">
-    <h1 class="home-content">最初の画面</h1>
+    <h1 class="home-content">ライダーリンク</h1>
   </div>
   <div class="entrance-center">
+    <div class="user">
+      <h2>ユーザー認証欄</h2>
+    </div>
     <div class="center-top">
       <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"user-logout" %>
         <%= link_to current_user.nickname, "#", class: "user-nickname" %>
-        <%= link_to "ツーリング予定を立てる", plan_index_path%>
+        <%= link_to "ツーリング予定を立てる", plan_index_path, class:"plan-create"%>
       <% else %>
-        <%= link_to "ログイン", new_user_session_path %>
-        <%= link_to "新規登録", new_user_registration_path %>
+        <%= link_to "ログイン", new_user_session_path, class:"user-login"%>
+        <%= link_to "新規登録", new_user_registration_path, class:"user-new"%>
       <% end %>
     </div>
     <div class="center-bottom">
+      <div class='center'>
+        <h2 class='hp'>↓国産バイクメーカー公式ホームページ↓</h2>
+      </div>
+      <div class='bottom-contents'>
+        <div class='honda-hp'>
+          <%= link_to image_tag("https://bike-lineage.org/etc/bike-trivia/img/wing.jpg", class:"honda-logo"), "https://www.honda.co.jp/motor/" %>
+        </div>
+        <div class='kawasaki-hp'>
+          <%= link_to image_tag("https://stat.ameba.jp/user_images/20180227/10/mst-green/2c/37/j/o0384038414139546850.jpg?caw=800", class:"kawasaki-logo"), "https://www.kawasaki-motors.com/mc/" %>
+        </div>
+        <div class='yamaha-hp'>
+          <%= link_to image_tag("https://stat.ameba.jp/user_images/20190827/15/tokyo-x0718/e7/3c/j/o0354034814553806736.jpg", class:"yamaha-logo"), "https://www.yamaha-motor.co.jp/mc/" %>
+        </div>
+        <div class='suzuki-hp'>
+          <%= link_to image_tag("https://www.rakuten.ne.jp/gold/tire-worldkan-best/images/search/parts/suzuki_logo.jpg", class:"suzuki-logo"), "https://www1.suzuki.co.jp/motor/" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
