@@ -1,0 +1,11 @@
+.user-top-title {
+  display: flex;
+}
+
+.fields {
+  display: flex;
+}
+
+.red-text {
+  color: red;
+}

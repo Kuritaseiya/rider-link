@@ -1,9 +1,9 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  extend ActiveHash::Associations::ActiveRecordExtensions
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :plans
+  belongs_to :gender
 
   with_options presence: true do
     validates :nickname
@@ -11,6 +11,8 @@ class User < ApplicationRecord
     validates :password
     validates :age
     validates :mybike
+    validates :gender_id
+    validates :prefecture_id
   end
 
   with_options length: {minimum: 6} do
@@ -24,5 +26,6 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6}
   validates :password, format: { with: /\A[a-z A-Z 0-9]+\z/ }
   validates :age,      format: { with: /\A[0-9]+\z/ }
+  validates :gender_id,   numericality: { other_than: 1 }
 
 end

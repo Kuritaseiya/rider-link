@@ -1,44 +1,75 @@
-<h2>ユーザー新規登録</h2>
+<div class="user-top-title">
+  <h2>ユーザー新規登録</h2>
+</div>
 
 <%= form_for(@user, url: user_registration_path) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  
-  <div class="field">
-    <%= f.label :nickname %><em>(６文字まで)</em><br />
-    <%= f.text_field :nickname, autofocus: true %>
+  <div class="fields">
+    <div class="field">
+      <%= f.label :nickname %><em><span class="red-text">※必須</span>(６文字まで)</em><br />
+      <%= f.text_field :nickname, autofocus: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
+  <div class="fields">
+    <div class="field">
+      <%= f.label :email %><em>※必須</em><br />
+      <%= f.email_field :email %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字)</em>
-    <% end %><br />
-    <%= f.password_field :password %>
+  <div class="fields">
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em><span class="red-text">※必須</span>(<%= @minimum_password_length %> 文字)</em>
+      <% end %><br />
+      <%= f.password_field :password %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
+  <div class="fields">
+    <div class="field">
+      <%= f.label :password_confirmation %><em><span class="red-text">※必須</span>(パスワード再確認)</em><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :age %><em>(半角数字のみ)</em><br />
-    <%= f.text_field :age %>
+  <div class="fields">
+    <div class="field">
+      <%= f.label :age %><em><span class="red-text">※必須</span>(半角数字のみ)</em><br />
+      <%= f.text_field :age %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :mybike %><em>(所持しているバイク)</em><br />
-    <%= f.text_field :mybike %>
+  <div class="fields">
+    <div class="field">
+      <%= f.label :mybike %><em><span class="red-text">※必須</span>(所持しているバイク)</em><br />
+      <%= f.text_field :mybike %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="fields">
+    <div class="field">
+      <%= f.label :gender %><em><span class="red-text">※必須</span>(あなたの性別)</em><br />
+      <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-content"}) %>
+    </div>
+  </div>
+
+  <div class="fields">
+    <div class="field">
+      <%= f.label :prefecture %><em><span class="red-text">※必須</span>(お住まいの都道府県)</em><br />
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-content"}) %>
+    </div>
+  </div>
+
+  <div class="fields">
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="fields">
+  <%=link_to "ホームに戻る", root_path%>
+</div>
