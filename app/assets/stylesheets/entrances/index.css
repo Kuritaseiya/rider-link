@@ -9,13 +9,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightcoral;
 }
 
 .home-content {
   font-size: 50px;
   color: black;
-  background-color: lawngreen;
 }
 
 .entrance-center {
@@ -23,7 +21,7 @@
   width: 100%;
 }
 
-.user {
+.sub-title {
   display: flex;
   justify-content: center;
 }
@@ -31,6 +29,8 @@
 .center-top {
   height: 200px;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .user-logout {
@@ -53,6 +53,12 @@
   font-size: 30px;
 }
 
+.plan-menu {
+  height: 200px;
+  width: 100%;
+  background-color: grey;
+}
+
 .center-bottom {
   height: 200px;
   width: 100%;
@@ -63,7 +69,9 @@
   height: 200px;
   width: 100%;
   display: flex;
-
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
 }
 
 .center {
