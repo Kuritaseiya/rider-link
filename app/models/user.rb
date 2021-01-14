@@ -4,6 +4,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :plans
   belongs_to :gender
+  belongs_to :prefecture
 
   with_options presence: true do
     validates :nickname
@@ -27,5 +28,6 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A[a-z A-Z 0-9]+\z/ }
   validates :age,      format: { with: /\A[0-9]+\z/ }
   validates :gender_id,   numericality: { other_than: 1 }
+  validates :prefecture_id, numericality: { other_than: 1 }
 
 end

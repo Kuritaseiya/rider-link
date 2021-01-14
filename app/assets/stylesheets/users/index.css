@@ -1,0 +1,13 @@
+.top-content {
+  display: flex;
+  justify-content: center;
+}
+
+.profiles {
+  background-color: royalblue;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+}
