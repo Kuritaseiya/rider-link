@@ -1,0 +1,30 @@
+<div class="top-content">
+  <h1>ユーザープロフィール</h1>
+</div>
+
+<div class="profiles">
+  <div class="profile">
+  <b>ニックネーム</b>
+    <%= @user.nickname %>
+  </div>
+  <div class="profile">
+  <b>メールアドレス</b>
+    <%= @user.email%>
+  </div>
+  <div class="profile">
+  <b>年齢</b>
+    <%= @user.age%><span>歳</span>
+  </div>
+  <div class="profile">
+  <b>あなたのバイク</b>
+    <%= @user.mybike%>
+  </div>
+  <div class="profile">
+  <b>あなたの性別</b>
+    <%= @user.gender.name%>
+  </div>
+  <div class="profile">
+  <b>あなたの出身地</b>
+    <%= @user.prefecture.name%>
+  </div>
+</div>
