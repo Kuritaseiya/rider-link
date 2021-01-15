@@ -1,0 +1,26 @@
+<div class="top-content">
+  <h1>プラン詳細</h1>
+</div>
+<% if user_signed_in? %>
+  <% if current_user.id == @plan.user.id %>
+    <%= link_to '削除', plan_path, method: :delete %>
+  <% end %>
+<% end %>
+<div class="profiles">
+  <div class="profile">
+  <b>開催者</b>
+    <%= @plan.user.nickname %>
+  </div>
+  <div class="profile">
+  <b>開催都道府県</b>
+    <%= @plan.prefecture.name%>
+  </div>
+  <div class="profile">
+  <b>開催日時</b>
+    <%= @plan.when%>
+  </div>
+  <div class="profile">
+  <b>その他条件等</b>
+    <%= @plan.conditions%>
+  </div>
+</div>

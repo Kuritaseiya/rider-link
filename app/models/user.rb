@@ -2,7 +2,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :plans
+  has_many :plans, dependent: :destroy
   belongs_to :gender
   belongs_to :prefecture
 
