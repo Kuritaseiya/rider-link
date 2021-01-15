@@ -27,7 +27,8 @@
       <% if @plans.length != 0 %>
         <% @plans.each do |plan| %>
           <div class="plan-name">
-            <%= plan.prefecture.name %>
+            <%= link_to plan.prefecture.name, plan_path(@plans.ids)%>
+            <%= plan.user.nickname%>
             <%= plan.when%>
             <%= plan.conditions%>
           </div>
