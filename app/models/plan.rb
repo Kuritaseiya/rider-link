@@ -2,6 +2,7 @@ class Plan < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
   belongs_to :user
+  has_many :messages, dependent: :destroy
 
   with_options presence: true do
     validates :when
