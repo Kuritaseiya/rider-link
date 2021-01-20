@@ -1,0 +1,14 @@
+<% if user_signed_in?%>
+  <%= form_with model: @message,url: plan_messages_path(@plan.id) do |f| %>
+    <%= f.text_field :text %>
+    <%= f.submit '送信' %>
+  <% end %>
+  <div id='messages'>
+    <% @messages.reverse_each do |message| %>
+      <% if @plan.id == message.plan.id%>
+        <div id="nickname" class="message-name"><%= message.user.nickname%>:</div>
+        <p><%= message.text %></p>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

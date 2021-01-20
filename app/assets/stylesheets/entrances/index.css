@@ -54,9 +54,14 @@
 }
 
 .plan-menu {
-  height: 200px;
+  height: 20px;
   width: 100%;
   background-color: grey;
+}
+
+.plan-zone {
+  width: 100%;
+  background-color: seagreen;
 }
 
 .center-bottom {
