@@ -2,8 +2,16 @@
 <%= form_for(@plan, url: plan_index_path) do |f| %>
 <%#= render 'shared/_error_messages' %>
   <div class="field">
-    <%= f.label :when %><em>(開催日時例・2020-01-01)</em><br />
-    <%= f.text_field :when, autofocus: true %>
+    <%= f.label :years %><em>(開催日時例・2020-01-01)</em><br />
+    <%= f.collection_select(:year_id, Year.all, :id, :name, {}, {class:"genre-select"}) %>
+  </div>
+  <div class="field">
+    <%= f.label :moons %><em>(開催日時例・2020-01-01)</em><br />
+    <%= f.collection_select(:moon_id, Moon.all, :id, :name, {}, {class:"genre-select"}) %>
+  </div>
+  <div class="field">
+    <%= f.label :days %><em>(開催日時例・2020-01-01)</em><br />
+    <%= f.collection_select(:day_id, Day.all, :id, :name, {}, {class:"genre-select"}) %>
   </div>
   <div class="field">
     <%= f.label :conditions %><em>(ツーリングについての集合場所、条件または備考等)</em><br />

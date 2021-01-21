@@ -30,7 +30,7 @@
           <div class="plan-name">
             <%= link_to plan.prefecture.name, plan_path(plan.id)%>
             <%= plan.user.nickname%>
-            <%= plan.when%>
+            <%= plan.year.name%>年<%= plan.moon.name%>月<%= plan.day.name%>日
             <%= plan.conditions%>
           </div>
         <% end %>

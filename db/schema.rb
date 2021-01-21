@@ -23,9 +23,12 @@ ActiveRecord::Schema.define(version: 2021_01_16_184134) do
   end
 
   create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "when"
+    t.integer "year_id"
+    t.integer "moon_id"
+    t.integer "day_id"
     t.text "conditions"
     t.integer "prefecture_id"
+    t.integer "message_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

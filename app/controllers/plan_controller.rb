@@ -15,13 +15,9 @@ class PlanController < ApplicationController
   end
 
   def show
-    if user_signed_in?
       set_plan
       @messages = Message.all
       @message = Message.new
-    else
-      redirect_to root_path
-    end
   end
 
   def destroy
@@ -34,7 +30,7 @@ class PlanController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:when,:conditions,:prefecture_id,:user_id).merge(user_id: current_user.id,message_id: params[:message_id])
+    params.require(:plan).permit(:year_id,:moon_id,:day_id,:conditions,:prefecture_id,:user_id,:message_id).merge(user_id: current_user.id,message_id: params[:message_id])
   end
 
   def set_plan
