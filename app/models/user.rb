@@ -19,7 +19,6 @@ class User < ApplicationRecord
 
   with_options length: {minimum: 6} do
     validates :password
-    validates :nickname
   end
 
 
@@ -30,5 +29,6 @@ class User < ApplicationRecord
   validates :age,      format: { with: /\A[0-9]+\z/ }
   validates :gender_id,   numericality: { other_than: 1 }
   validates :prefecture_id, numericality: { other_than: 1 }
+  validates :nickname, length: {minimum: 1}
 
 end

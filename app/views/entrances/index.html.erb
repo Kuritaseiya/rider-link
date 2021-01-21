@@ -29,9 +29,9 @@
         <% if @plans.length != 0 %>
           <div class="plan-name">
             <%= link_to plan.prefecture.name, plan_path(plan.id)%>
-            <%= plan.user.nickname%>
-            <%= plan.when%>
-            <%= plan.conditions%>
+            <b>企画者名:</b><%= plan.user.nickname%>
+            <b>開催日時:</b><%= plan.year.name%>年<%= plan.moon.name%>月<%= plan.day.name%>日
+            <b>その他条件等</b><%= plan.conditions%>
           </div>
         <% end %>
       </div>

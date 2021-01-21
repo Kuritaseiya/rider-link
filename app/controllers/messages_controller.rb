@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     if @message.save
       ActionCable.server.broadcast 'message_channel', content: @message
     else
-      redirect_to root_path
+      redirect_to :new
     end
   end
 
