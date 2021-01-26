@@ -12,7 +12,6 @@ class EntrancesController < ApplicationController
   
   private
 
-  #def plan_params
   def entrance_params
     params.require(:entrance).permit(:choice_id).merge(user_id: current_user.id)
   end
