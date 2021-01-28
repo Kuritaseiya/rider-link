@@ -9,11 +9,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: image-url('388ce4563dbdc161862cb414ae291022.jpg');
 }
 
 .home-content {
   font-size: 50px;
-  color: black;
+  color: aliceblue;
 }
 
 .entrance-center {
@@ -86,14 +87,16 @@
 }
 
 .center {
-  height: 100%;
+  height: 100px;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .hp {
   font-size: 50px;
+  color: aliceblue;
 }
 
 .honda-hp {
