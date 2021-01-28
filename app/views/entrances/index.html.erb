@@ -1,5 +1,17 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+  <script type="text/javascript">
+          $(document).ready(function(){
+              $('.slider').bxSlider({
+                  auto: true,
+                  pause: 5000,
+              });
+          });
+  </script>
 </head>
 
 <div class="entrance-top">
@@ -22,6 +34,12 @@
     </div>
     <div class="sub-title">
       <h2>＜ツーリングプラン一覧＞</h2>
+    </div>
+    <div class="slider">
+      <img src="https://young-machine.com/main/wp-content/uploads/2020/02/honda-rc213v-23.jpg" width="400" height="300" >
+      <img src="https://ridermagazine.com/wp-content/uploads/2018/02/WING7283.jpg" width="400" height="300">
+      <img src="https://clicccar.com/wp-content/uploads/2020/01/JORGE-LORENZO_TEST_RIDER_3-20200131161655-800x533.jpg" width="400" height="300" >
+      <img src="https://media.nationthailand.com/images/news/2020/11/11/30397774/800_2e1d825b330b9cf.jpg?v=1605101755" width="400" height="300" >
     </div>
     <div class="plan-zone">
     <% @plans.each do |plan| %>
