@@ -32,29 +32,35 @@
         <%= link_to "新規登録", new_user_registration_path, class:"user-new"%>
       <% end %>
     </div>
-    <div class="sub-title">
-      <h2>＜ツーリングプラン一覧＞</h2>
-    </div>
     <div class="slider">
       <img src="https://young-machine.com/main/wp-content/uploads/2020/02/honda-rc213v-23.jpg" width="400" height="300" alt="">
       <img src="https://ridermagazine.com/wp-content/uploads/2018/02/WING7283.jpg" width="400" height="300" alt="">
       <img src="https://clicccar.com/wp-content/uploads/2020/01/JORGE-LORENZO_TEST_RIDER_3-20200131161655-800x533.jpg" width="400" height="300" alt="">
       <img src="https://media.nationthailand.com/images/news/2020/11/11/30397774/800_2e1d825b330b9cf.jpg?v=1605101755" width="400" height="300" alt="">
     </div>
-    <div class="plan-zone">
-    <% @plans.each do |plan| %>
-      <div class="plan-menu">
-        <% if @plans.length != 0 %>
-          <div class="plan-name">
-            <%= link_to plan.prefecture.name, plan_path(plan.id)%>
-            <b>企画者名:</b><%= plan.user.nickname%>
-            <b>開催日時:</b><%= plan.year.name%>年<%= plan.moon.name%>月<%= plan.day.name%>日
-            <b>その他条件等</b><%= plan.conditions%>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+    <div class="sub-title">
+      <h2>＜ツーリングプラン一覧＞</h2>
     </div>
+    <div class="plan-zone">
+      <% @plans.each do |plan| %>
+        <div class="plan-menu">
+          <% if @plans.length != 0 %>
+            <div class="plan-name">
+              <%= link_to plan.prefecture.name, plan_path(plan.id)%>
+              <b>企画者名:</b><%= plan.user.nickname%>
+              <b>開催日時:</b><%= plan.year.name%>年<%= plan.moon.name%>月<%= plan.day.name%>日
+              <b>その他条件等</b><%= plan.conditions%>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="spase">
+    </div>
+    <div class="start-rider">
+      <h2 class="start-name">〜初心者必見!!バイクについて〜</h2>
+    </div>
+      <%= link_to "バイクの種類はどんなものがある？", "https://st-0222.hatenablog.com/entry/2021/01/30/135717?_ga=2.195619116.164761056.1611973755-1201742914.1610726529"%>
     <div class="center-bottom">
       <div class='center'>
         <h2 class='hp'>↓国産バイクメーカー公式ホームページ↓</h2>
@@ -76,8 +82,7 @@
     </div>
   </div>
 </div>
-<div class="bottom-content">
-</div>
+
 
 
 
