@@ -63,18 +63,27 @@
 .plan-menu {
   height: 20px;
   width: 100%;
+  display: flex;
+  justify-content: center;
   background-color: grey;
 }
 
 .plan-zone {
   width: 100%;
-  background-color: seagreen;
 }
 
+.spase {
+  height: 30px;
+}
+
+.start-rider {
+  display: flex;
+  justify-content: center;
+}
 .center-bottom {
   height: 200px;
   width: 100%;
-  background-color: green;
+  //background-color: green;
 }
 
 .bottom-contents {
@@ -87,16 +96,17 @@
 }
 
 .center {
-  height: 100px;
+  height: 60px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: cadetblue;
 }
 
 .hp {
-  font-size: 50px;
-  color: aliceblue;
+  font-size: 25px;
+  color: black;
 }
 
 .honda-hp {
