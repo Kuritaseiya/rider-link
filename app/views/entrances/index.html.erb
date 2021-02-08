@@ -1,22 +1,11 @@
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
-  <script type="text/javascript">
-          $(document).ready(function(){
-              $('.slider').bxSlider({
-                  auto: true,
-                  pause: 5000,
-              });
-          });
-  </script>
-</head>
-
 <div class="entrance-top">
+<div class="home-content-back">
+  <h1 class="home-content">ライダーリンク</h1>
+</div>
   <div class="home">
-    <h1 class="home-content">ライダーリンク</h1>
+    <div class="top-image">
+      <%=image_tag("rider-link.jpg",class: "top-image")%>
+    </div>
   </div>
   <div class="entrance-center">
     <div class="sub-title">
@@ -24,19 +13,19 @@
     </div>
     <div class="center-top">
       <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"user-logout" %>
-        <%= link_to current_user.nickname, user_index_path, class: "user-nickname" %>
-        <%= link_to "ツーリング予定を立てる", plan_index_path, class:"plan-create"%>
+        <div class="user-logout-out">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"user-logout" %>
+        </div>
+        <div class="user-nickname-out">
+          <%= link_to current_user.nickname, user_index_path, class: "user-nickname" %>
+        </div>
+        <div class="plan-create-out">
+          <%= link_to "ツーリング予定を立てる", plan_index_path, class:"plan-create"%>
+        </div>
       <% else %>
         <%= link_to "ログイン", new_user_session_path, class:"user-login"%>
         <%= link_to "新規登録", new_user_registration_path, class:"user-new"%>
       <% end %>
-    </div>
-    <div class="slider">
-      <img src="https://young-machine.com/main/wp-content/uploads/2020/02/honda-rc213v-23.jpg" width="400" height="300" alt="">
-      <img src="https://ridermagazine.com/wp-content/uploads/2018/02/WING7283.jpg" width="400" height="300" alt="">
-      <img src="https://clicccar.com/wp-content/uploads/2020/01/JORGE-LORENZO_TEST_RIDER_3-20200131161655-800x533.jpg" width="400" height="300" alt="">
-      <img src="https://media.nationthailand.com/images/news/2020/11/11/30397774/800_2e1d825b330b9cf.jpg?v=1605101755" width="400" height="300" alt="">
     </div>
     <div class="sub-title">
       <h2>＜ツーリングプラン一覧＞</h2>
