@@ -23,8 +23,12 @@
           <%= link_to "ツーリング予定を立てる", plan_index_path, class:"plan-create"%>
         </div>
       <% else %>
-        <%= link_to "ログイン", new_user_session_path, class:"user-login"%>
-        <%= link_to "新規登録", new_user_registration_path, class:"user-new"%>
+        <div class="user-login-out">
+          <%= link_to "ログイン", new_user_session_path, class:"user-login"%>
+        </div>
+        <div class="user-new-out">
+          <%= link_to "新規登録", new_user_registration_path, class:"user-new"%>
+        </div>
       <% end %>
     </div>
     <div class="sub-title">
