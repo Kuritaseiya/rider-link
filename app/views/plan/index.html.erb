@@ -3,7 +3,6 @@
 </div>
 <div class="main-content">
   <%= form_for(@plan, url: plan_index_path) do |f| %>
-  <%#= render 'shared/_error_messages' %>
     <div class="field">
       <%= f.label "年" %><em>(開催日時例・2020-01-01)</em><br />
       <%= f.collection_select(:year_id, Year.all, :id, :name, {}, {class:"genre-select"}) %>
