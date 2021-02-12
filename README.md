@@ -12,12 +12,14 @@
 # テスト用アカウント
 
 * ユーザー１
-* email = test@test
+* ユーザー名：山田太郎
+* email = taro@taro
 * password = test12
 
 * ユーザー２
-* email = popopo@popopo
-* password = popo12
+* ユーザー名：川崎忍
+* email = sinobu@sinobu
+* password = ninja0
 
 # 制作背景
 
