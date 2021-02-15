@@ -7,6 +7,7 @@ class PlanController < ApplicationController
 
   def create
     @plan = Plan.new(plan_params)
+    binding.pry
     if @plan.save
       redirect_to root_path
     else
@@ -16,8 +17,8 @@ class PlanController < ApplicationController
 
   def show
       set_plan
-      @messages = Message.all
-      @message = Message.new
+      #@messages = Message.all
+      #@message = Message.new
   end
 
   def destroy
@@ -30,7 +31,7 @@ class PlanController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:year_id,:moon_id,:day_id,:conditions,:prefecture_id,:user_id,:message_id).merge(user_id: current_user.id,message_id: params[:message_id])
+    params.require(:plan).permit(:year_id,:moon_id,:day_id,:power_id,:maker_id,:highway_id,:age_min_id,:age_max_id,:conditions,:prefecture_id,:user_id).merge(user_id: current_user.id)
   end
 
   def set_plan
