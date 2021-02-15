@@ -16,12 +16,32 @@
       <%= f.collection_select(:day_id, Day.all, :id, :name, {}, {class:"genre-select"}) %>
     </div>
     <div class="field">
-      <%= f.label :conditions %><em>(ツーリングについての集合場所、条件または備考等)</em><br />
-      <%= f.text_field :conditions %>
+      <%= f.label "排気量指定" %><em>※高速道路に乗る際は125cc未満参加不可にしてください</em><br />
+      <%= f.collection_select(:power_id, Power.all, :id, :name, {}, {class:"genre-select"}) %>
     </div>
     <div class="field">
-      <%= f.label :prefectures %><em>(都道府県)</em><br />
+      <div><%= f.label "高速道路" %></div>
+      <%= f.collection_select(:highway_id, Highway.all, :id, :name, {}, {class:"genre-select"}) %>
+    </div>
+    <div class="field">
+      <div><%= f.label "メーカー指定" %></div>
+      <%= f.collection_select(:maker_id, Maker.all, :id, :name, {}, {class:"genre-select"}) %>
+    </div>
+    <div class="field">
+      <div><%= f.label "参加できる最低年齢" %></div>
+      <%= f.collection_select(:age_min_id, AgeMin.all, :id, :name, {}, {class:"genre-select"}) %>
+    </div>
+    <div class="field">
+      <div><%= f.label "参加できる最高年齢" %></div>
+      <%= f.collection_select(:age_max_id, AgeMax.all, :id, :name, {}, {class:"genre-select"}) %>
+    </div>
+    <div class="field">
+      <div><%= f.label "開催する都道府県" %></div>
       <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"genre-select"}) %>
+    </div>
+    <div class="field">
+      <%= f.label :conditions %><em>ツーリングについての集合場所、条件または備考等</em><br />
+      <%= f.text_field :conditions %>
     </div>
     <div class="actions">
       <%= f.submit "計画を立てる" %>
