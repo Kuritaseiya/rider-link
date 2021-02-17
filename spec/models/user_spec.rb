@@ -25,11 +25,10 @@ RSpec.describe User, type: :model do
     end
 
     it "emailが既にある(一意性でない)場合に新規登録できない" do
-      #user = create(:user)
-      #another_user = build(:user, email: user.email)
-      #another_user.valid?
-      #binding.pry
-      #expect(another_user.errors[:email]).to include("has already been taken")
+      user = create(:user)
+      another_user = build(:user, email: user.email)
+      another_user.valid?
+      expect(another_user.errors[:email]).to include("has already been taken")
     end
 
     it "emailに＠を含まない場合に新規登録できない" do
