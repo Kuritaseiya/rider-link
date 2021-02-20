@@ -1,22 +1,28 @@
 .entrance-top {
-  width: 1500px;
+  width: 100%;
   height: 500px;
+  background-color: #f8f8f8;
 }
 
 .home {
-  max-width: 1460px;
   width: 100%;
-  height: 1000px;
-  display: flex;
-  justify-content: center;
+  height: 600px;
 }
 
 .top-image {
-  max-width: 100%;
-  height: 1000px;
+  background-image: image-url('rider-link.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100%;
+  height: 600px;
   display: flex;
 }
 
+.title {
+  color: white;
+  font-size: 100px;
+}
 
 .home-content-back {
   display: flex;
@@ -32,45 +38,65 @@
 .entrance-center {
   height: 400px;
   width: 100%;
+  background-color: #f8f8f8;
+}
+
+.torisetu-in {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  color: whitesmoke;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
 .sub-title {
   display: flex;
   justify-content: center;
+  background-color: #f8f8f8;
 }
-
-.slider {
-  height: 300px;
-  width: 400px;
-}
-
 
 .center-top {
   height: 100px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  background-color: #f8f8f8;
+}
+
+.center-left {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.center-right {
+  display: flex;
 }
 
 .user-logout-out {
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 
 .user-logout {
   font-size: 30px;
-  color: blue;
-  border: 1px solid blue;
+  color:black;
+  //border: 1px solid blue;
+  text-decoration: none;
 }
 
 .user-login-out {
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 
 .user-login {
-  color: blue;
-  border: 1px solid blue;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
 }
 
 .user-new-out {
@@ -79,19 +105,21 @@
 }
 
 .user-new {
-  color: blue;
-  border: 1px solid blue;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
 }
 
 .user-nickname-out {
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 
 .user-nickname {
   font-size: 30px;
-  color: blue;
-  border: 1px solid blue;
+  color: black;
+  text-decoration: none;
 }
 
 .plan-create-out {
@@ -101,108 +129,157 @@
 
 .plan-create {
   font-size: 30px;
-  color: blue;
-  border: 1px solid blue;
-}
-
-.user-login {
-  font-size: 30px;
-}
-
-.user-new {
-  font-size: 30px;
-}
-
-.plan-menu {
-  height: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  border: 1px solid black;
-  margin-top: 5px;
+  color: black;
+  text-decoration: none;
 }
 
 .plan-zone {
   width: 100%;
 }
 
+.plan-menu-out {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid cadetblue;
+  margin: 5px;
+}
+
+.plan-menu {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.plan-left {
+  color: black;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.prefecture-name {
+  text-decoration: none;
+  font-size: 35px;
+  color: black;
+}
+
+.plan-right {
+  width: 80%;
+  justify-content: center;
+}
+
+.right-top {
+  display: flex;
+  justify-content: center;
+}
+
+.right-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.plan-content {
+  font-size: 23px;
+}
+
 .spase {
   height: 30px;
 }
 
-.start-rider {
+.bikers {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+}
+
+.bike {
+  width: 15%;
+  height: 55%;
+  background-color: brown;
+}
+
+.bike-name {
   display: flex;
   justify-content: center;
 }
-.center-bottom {
-  height: 200px;
+
+.bike-image {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+
+}
+
+.neikid {
   width: 100%;
-  //background-color: green;
+  height: 70%;
+}
+
+.center-bottom {
+  height: 50px;
+  width: 100%;
 }
 
 .bottom-contents {
-  height: 200px;
+  height: 100px;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: black;
+  background-color: rgb(43, 42, 42);
 }
 
-.center {
-  height: 60px;
+.official-site {
   width: 100%;
+  height: 50px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: cadetblue;
+}
+
+.official-font {
+  font-size: 20px;
+  color: white;
+}
+
+.hp-out {
+  height: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .hp {
-  font-size: 25px;
-  color: black;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
 }
 
-.honda-hp {
-  height: 70%;
-  width: 20%;
+.honda {
+  color: white;
+  padding: 10px;
+  font-size: 20px;
 }
 
-.honda-logo {
-  height: 100%;
-  width: 100%;
+.kawasaki {
+  color: white;
+  padding: 10px;
+  font-size: 20px;
 }
 
-.kawasaki-hp {
-  height: 70%;
-  width: 20%;
+.yamaha {
+  color: white;
+  padding: 10px;
+  font-size: 20px;
 }
 
-.kawasaki-logo {
-  height: 100%;
-  width: 100%;
+.suzuki {
+  color: white;
+  padding: 10px;
+  font-size: 20px;
 }
-
-.yamaha-hp {
-  height: 70%;
-  width: 20%;
-}
-
-.yamaha-logo {
-  height: 100%;
-  width: 100%;
-}
-
-.suzuki-hp {
-  height: 70%;
-  width: 20%;
-}
-
-.suzuki-logo {
-  height: 100%;
-  width: 100%;
-}
-
 
 
 @media (max-width: 1024px) {

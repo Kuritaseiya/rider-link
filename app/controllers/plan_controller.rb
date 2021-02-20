@@ -7,7 +7,6 @@ class PlanController < ApplicationController
 
   def create
     @plan = Plan.new(plan_params)
-    binding.pry
     if @plan.save
       redirect_to root_path
     else

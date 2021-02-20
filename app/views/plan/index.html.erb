@@ -1,53 +1,75 @@
-<div class="top">
-  <h1>ツーリング予定を立てる</h1>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <h1 class="display-3">ツーリング予定を立てる</h1>
+  </div>
+  <div class="col-4">
+    <h2><%= link_to "<-ホーム画面へ戻る", root_path%></h2>
+  </div>
 </div>
-<div class="main-content">
+<div class="container-fluid">
   <%= form_for(@plan, url: plan_index_path) do |f| %>
-    <div class="field">
-      <%= f.label "年" %><em>(開催日時例・2020-01-01)</em><br />
-      <%= f.collection_select(:year_id, Year.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "年" %><em>(開催日時例・2020-01-01)</em><br />
+        <%= f.collection_select(:year_id, Year.all, :id, :name, {}, {class:"form-control"}) %> 
+      </div>
     </div>
-    <div class="field">
-      <%= f.label "月" %><em>(開催日時例・2020-01-01)</em><br />
-      <%= f.collection_select(:moon_id, Moon.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "月" %><em>(開催日時例・2020-01-01)</em><br />
+        <%= f.collection_select(:moon_id, Moon.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label "日" %><em>(開催日時例・2020-01-01)</em><br />
-      <%= f.collection_select(:day_id, Day.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "日" %><em>(開催日時例・2020-01-01)</em><br />
+        <%= f.collection_select(:day_id, Day.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label "排気量指定" %><em>※高速道路に乗る際は125cc未満参加不可にしてください</em><br />
-      <%= f.collection_select(:power_id, Power.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "排気量指定" %><em>※高速道路に乗る際は125cc未満参加不可にしてください</em><br />
+        <%= f.collection_select(:power_id, Power.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
     </div>
-    <div class="field">
-      <div><%= f.label "高速道路" %></div>
-      <%= f.collection_select(:highway_id, Highway.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "高速道路" %>
+        <%= f.collection_select(:highway_id, Highway.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
     </div>
-    <div class="field">
-      <div><%= f.label "メーカー指定" %></div>
-      <%= f.collection_select(:maker_id, Maker.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "メーカー指定" %>
+        <%= f.collection_select(:maker_id, Maker.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
     </div>
-    <div class="field">
-      <div><%= f.label "参加できる最低年齢" %></div>
-      <%= f.collection_select(:age_min_id, AgeMin.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "参加できる最低年齢" %>
+        <%= f.collection_select(:age_min_id, AgeMin.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
     </div>
-    <div class="field">
-      <div><%= f.label "参加できる最高年齢" %></div>
-      <%= f.collection_select(:age_max_id, AgeMax.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "参加できる最高年齢" %>
+        <%= f.collection_select(:age_max_id, AgeMax.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
     </div>
-    <div class="field">
-      <div><%= f.label "開催する都道府県" %></div>
-      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "開催する都道府県" %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :conditions %><em>ツーリングについての集合場所、条件または備考等</em><br />
-      <%= f.text_field :conditions %>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "その他条件等、集合場所、集合時間など" %>
+        <%= f.text_field :conditions, class:"form-control"%>
+      </div>
     </div>
-    <div class="actions">
-      <%= f.submit "計画を立てる" %>
-    </div>
-    <div class="go-home">
-      <%= link_to "ホーム画面へ戻る", root_path%>
+    <div class="row justify-content-center">
+      <%= f.submit "計画を立てる", class:"btn byn-primary" %>
     </div>
   <% end %>
 </div>

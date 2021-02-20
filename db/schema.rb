@@ -10,33 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_23_080949) do
-
-  create_table "entrances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "choice_id"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_entrances_on_user_id"
-  end
-
-  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "text"
-    t.bigint "user_id"
-    t.bigint "plan_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["plan_id"], name: "index_messages_on_plan_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2021_01_10_100827) do
 
   create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "year_id"
     t.integer "moon_id"
     t.integer "day_id"
+    t.integer "power_id"
+    t.integer "maker_id"
+    t.integer "highway_id"
+    t.integer "age_min_id"
+    t.integer "age_max_id"
     t.text "conditions"
     t.integer "prefecture_id"
-    t.integer "message_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -60,8 +46,5 @@ ActiveRecord::Schema.define(version: 2021_01_23_080949) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "entrances", "users"
-  add_foreign_key "messages", "plans"
-  add_foreign_key "messages", "users"
   add_foreign_key "plans", "users"
 end

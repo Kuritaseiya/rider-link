@@ -1,30 +1,61 @@
-<div class="top-content">
-  <h1>ユーザープロフィール</h1>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h1 class="display-1">USER PROFILE</h1>
+    </div>
+  </div>
+  <div class="col-4">
+    <h2><%= link_to "<-ホーム画面へ戻る", root_path%></h2>
+  </div>
 </div>
 
-<div class="profiles">
-  <div class="profile">
-  <b>ニックネーム</b>
-    <%= @user.nickname %>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-3 offset-md-1">
+      <h1>ニックネーム</h1>
+    </div>
+    <div class="col-3 offset-md-1">
+      <h1><%= @user.nickname %></h1>
+    </div>
   </div>
-  <div class="profile">
-  <b>メールアドレス</b>
-    <%= @user.email%>
+  <div class="row justify-content-center">
+    <div class="col-3 offset-md-1">
+      <h1>メールアドレス</h1>
+    </div>
+    <div class="col-3 offset-md-1">
+      <h1><%= @user.email%></h1>
+    </div>
   </div>
-  <div class="profile">
-  <b>年齢</b>
-    <%= @user.age%><span>歳</span>
+  <div class="row justify-content-center">
+    <div class="col-3 offset-md-1">
+      <h1>年齢</h1>
+    </div>
+    <div class="col-3 offset-md-1">
+      <h1><%= @user.age%><span>歳</span></h1>
+    </div>
   </div>
-  <div class="profile">
-  <b>あなたのバイク</b>
-    <%= @user.mybike%>
+  <div class="row justify-content-center">
+    <div class="col-3 offset-md-1">
+      <h1>あなたのバイク</h1>
+    </div>
+    <div class="col-3 offset-md-1">
+      <h1><%= @user.mybike%></h1>
+    </div>
   </div>
-  <div class="profile">
-  <b>あなたの性別</b>
-    <%= @user.gender.name%>
+  <div class="row justify-content-center">
+    <div class="col-3 offset-md-1">
+      <h1>あなたの性別</h1>
+    </div>
+    <div class="col-3 offset-md-1">
+      <h1><%= @user.gender.name%></h1>
+    </div>
   </div>
-  <div class="profile">
-  <b>あなたの出身地</b>
-    <%= @user.prefecture.name%>
+  <div class="row justify-content-center">
+    <div class="col-3 offset-md-1">
+      <h1>あなたの出身地</h1>
+    </div>
+    <div class="col-3 offset-md-1">
+      <h1><%= @user.prefecture.name%></h1>
+    </div>
   </div>
 </div>
