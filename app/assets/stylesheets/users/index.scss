@@ -1,6 +1,13 @@
 .top-content {
   display: flex;
   justify-content: center;
+  height: 150px;
+  width: 100%;
+  align-items: center;
+}
+
+.profile-top {
+  font-size: 70px;
 }
 
 .profiles {

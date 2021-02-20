@@ -1,75 +1,79 @@
-<div class="user-top-title">
-  <h2>ユーザー新規登録</h2>
+<div class="bg-light">
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <h1 class="display-3">ユーザー新規登録</h1>
+  </div>
+  <div class="col-4">
+    <h2><%= link_to "<-ホーム画面へ戻る", root_path%></h2>
+  </div>
 </div>
 
-<%= form_for(@user, url: user_registration_path) do |f| %>
+<div class="container-fluid">
+  <%= form_for(@user, url: user_registration_path) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="fields">
-    <div class="field">
-      <%= f.label :nickname %><em><span class="red-text">※必須</span>(６文字まで)</em><br />
-      <%= f.text_field :nickname, autofocus: true %>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <%= f.label "ニックネーム" %><em><span class="red-text">※必須</span>(６文字まで)</em><br />
+      <%= f.text_field :nickname, autofocus: true, class:"form-control" %>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <%= f.label "Eメール" %><em><span class="red-text">※必須</span><br />
+      <%= f.text_field :email, class:"form-control" %>
     </div>
   </div>
 
-  <div class="fields">
-    <div class="field">
-      <%= f.label :email %><em>※必須</em><br />
-      <%= f.email_field :email %>
-    </div>
-  </div>
-
-  <div class="fields">
-    <div class="field">
-      <%= f.label :password %>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <%= f.label "パスワード" %>
       <% if @minimum_password_length %>
       <em><span class="red-text">※必須</span>(<%= @minimum_password_length %> 文字)</em>
       <% end %><br />
-      <%= f.password_field :password %>
+      <%= f.text_field :password, class:"form-control"%>
     </div>
   </div>
 
-  <div class="fields">
-    <div class="field">
-      <%= f.label :password_confirmation %><em><span class="red-text">※必須</span>(パスワード再確認)</em><br />
-      <%= f.password_field :password_confirmation %>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <%= f.label "パスワード再確認" %><em><span class="red-text">※必須</span><br />
+      <%= f.text_field :password_confirmation, class:"form-control" %>
     </div>
   </div>
 
-  <div class="fields">
-    <div class="field">
-      <%= f.label :age %><em><span class="red-text">※必須</span>(半角数字のみ)</em><br />
-      <%= f.text_field :age %>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <%= f.label "年齢" %><em><span class="red-text">※半角数字のみ</span><br />
+      <%= f.text_field :age, class:"form-control" %>
     </div>
   </div>
 
-  <div class="fields">
-    <div class="field">
-      <%= f.label :mybike %><em><span class="red-text">※必須</span>(所持しているバイク)</em><br />
-      <%= f.text_field :mybike %>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <%= f.label "所持しているバイク" %><em><span class="red-text">※必須</span><br />
+      <%= f.text_field :mybike, class:"form-control" %>
     </div>
   </div>
 
-  <div class="fields">
-    <div class="field">
-      <%= f.label :gender %><em><span class="red-text">※必須</span>(あなたの性別)</em><br />
-      <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-content"}) %>
+  
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <%= f.label "性別" %><em><span class="red-text">※必須</span><br />
+      <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
 
-  <div class="fields">
-    <div class="field">
-      <%= f.label :prefecture %><em><span class="red-text">※必須</span>(お住まいの都道府県)</em><br />
-      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-content"}) %>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <%= f.label "お住まいの都道府県" %><em><span class="red-text">※必須</span><br />
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
 
-  <div class="fields">
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
+  <div class="row justify-content-center">
+    <%= f.submit "登録する", class:"btn byn-primary" %>
   </div>
 <% end %>
-
-<div class="fields">
-  <%=link_to "ホームに戻る", root_path%>
+</div>
 </div>

@@ -4,8 +4,12 @@ class Plan < ApplicationRecord
   belongs_to :year
   belongs_to :moon
   belongs_to :day
+  belongs_to :power
+  belongs_to :maker
+  belongs_to :highway
+  belongs_to :age_min
+  belongs_to :age_max
   belongs_to :user
-  has_many :messages, dependent: :destroy
 
   with_options presence: true do
     validates :year_id
