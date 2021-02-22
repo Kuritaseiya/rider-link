@@ -4,6 +4,7 @@ class CreatePlans < ActiveRecord::Migration[6.0]
       t.integer    :year_id
       t.integer    :moon_id
       t.integer    :day_id
+      t.integer    :participant_id
       t.integer    :power_id
       t.integer    :maker_id
       t.integer    :highway_id
