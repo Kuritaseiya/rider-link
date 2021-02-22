@@ -16,8 +16,6 @@ class PlanController < ApplicationController
 
   def show
       set_plan
-      #@messages = Message.all
-      #@message = Message.new
   end
 
   def destroy
@@ -30,7 +28,7 @@ class PlanController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:year_id,:moon_id,:day_id,:power_id,:maker_id,:highway_id,:age_min_id,:age_max_id,:conditions,:prefecture_id,:user_id).merge(user_id: current_user.id)
+    params.require(:plan).permit(:year_id,:moon_id,:day_id,:power_id,:maker_id,:highway_id,:age_min_id,:age_max_id,:conditions,:prefecture_id,:participant_id,:user_id).merge(user_id: current_user.id)
   end
 
   def set_plan

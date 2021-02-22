@@ -123,7 +123,7 @@
         <div class="card-footer">
           <% if user_signed_in? %>
             <button type="button" class="btn btn-outline-primary">
-              <%= link_to "ツーリング予定を立てる", plan_index_path, class:"plan-create"%>
+              <%= link_to "ツーリングに参加する", plan_index_path, class:"plan-create"%>
             </button>
           <% else %>
             <button type="button" class="btn btn-outline-secondary">
@@ -144,7 +144,8 @@
       <div class="card" style="max-width: 100%;">
         <% if @plans.length != 0 %>
           <div class="card-header">
-            <h2>企画者名:<%= plan.user.nickname%></h2>
+            <h2><div class="col-5">企画者名:<%= plan.user.nickname%></div>
+            <div class="col-5">募集人数:<%= plan.participant.name%>人</div></h2>
           </div>
         <div class="card-body">
           <p class="card-text"><h4>開催都道府県:<%= plan.prefecture.name%></h4></p>
