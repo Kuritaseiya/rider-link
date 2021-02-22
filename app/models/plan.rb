@@ -9,12 +9,15 @@ class Plan < ApplicationRecord
   belongs_to :highway
   belongs_to :age_min
   belongs_to :age_max
+  belongs_to :participant
   belongs_to :user
+  has_many    :child, dependent: :destroy
 
   with_options presence: true do
     validates :year_id
     validates :moon_id
     validates :day_id
+    validates :participant_id
     validates :prefecture_id
     validates :conditions
   end

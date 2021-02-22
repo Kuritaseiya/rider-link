@@ -15,12 +15,31 @@
       <% end %>
     </div>
   </div>
+
+<%= render "child/new"%>
+
   <div class="row justify-content-center">
     <div class="col-2">
       <h2>開催者</h2>
     </div>
     <div class="col-2">
       <h2><%= @plan.user.nickname %></h2>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-2">
+      <h2>募集人数</h2>
+    </div>
+    <div class="col-2">
+      <h2><%= @plan.participant.name %>人</h2>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-2">
+      <h2>参加者</h2>
+    </div>
+    <div class="col-2">
+      <h2><%#= @plan.child.user.name %>人</h2>
     </div>
   </div>
   <div class="row justify-content-center">
