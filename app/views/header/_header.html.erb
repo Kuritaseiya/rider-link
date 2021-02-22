@@ -1,0 +1,34 @@
+<div class="container-fluid">
+      <div class="row justify-content:space-between">
+        <div class="col-6">
+          <h2>RIDER-LINK</h2>
+        </div>
+        <div class="col-3">
+          <% if user_signed_in?%>
+            <h2 class="text-primary">ログインしています</h2>
+          <% else %>
+            <h2 class="text-danger">ログインしていません！</h2>
+          <% end %>
+        </div>
+        <div class="col-3">
+          <% if user_signed_in? %>
+            <button type="button" class="btn btn-outline-primary">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"user-logout" %>
+            </button>
+            <button type="button" class="btn btn-outline-primary">
+              <%= link_to current_user.nickname, user_index_path, class: "user-nickname" %>
+            </button>
+            <button type="button" class="btn btn-outline-primary">
+              <%= link_to "ツーリング予定を立てる", plan_index_path, class:"plan-create"%>
+            </button>
+          <% else %>
+            <button type="button" class="btn btn-outline-primary">
+              <%= link_to "ログイン", new_user_session_path, class:"user-login"%>
+            </button>
+            <button type="button" class="btn btn-outline-primary">
+              <%= link_to "新規登録", new_user_registration_path, class:"user-new"%>
+            </button>
+          <% end %>
+        </div>
+      </div>
+</div>
