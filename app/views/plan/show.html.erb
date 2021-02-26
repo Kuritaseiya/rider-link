@@ -1,20 +1,24 @@
+<div class="bg-light">
 <%= render "header/header"%>
 
 <div class="container-fluid">
-  <div class="row justify-content-center">
+  <div class="row">
+    <div class="col-4">
+      <h2><%= link_to "<-ホーム画面へ戻る", root_path%></h2>
+    </div>
     <div class="col-4">
       <h1 class="display-4">ツーリングプラン詳細</h1>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-1">
-      <% if user_signed_in? %>
-        <% if current_user.id == @plan.user.id %>
-          <button type="button" class="btn btn-outline-primary">
-            <%= link_to 'このプランを削除する', plan_path, method: :delete %>
-          </button>
+    <div class="row justify-content-center">
+      <div class="col-1">
+        <% if user_signed_in? %>
+          <% if current_user.id == @plan.user.id %>
+            <button type="button" class="btn btn-outline-primary">
+              <%= link_to 'このプランを削除する', plan_path, method: :delete %>
+            </button>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 
@@ -38,18 +42,10 @@
   </div>
   <div class="row justify-content-center">
     <div class="col-2">
-      <h2>参加者</h2>
-    </div>
-    <div class="col-2">
-      <h2><%#= @plan.child.user.name %>人</h2>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-2">
       <h2>開催都道府県</h2>
     </div>
     <div class="col-2">
-      <h2><%= @plan.prefecture.name%>県</h2>
+      <h2><%= @plan.prefecture.name%></h2>
     </div>
   </div>
   <div class="row justify-content-center">
@@ -94,4 +90,5 @@
       <h3><%= @plan.conditions%></h3>
     </div>
   </div>
+</div>
 </div>
