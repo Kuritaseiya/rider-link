@@ -40,6 +40,8 @@
       <h2><%= @plan.participant.name %>人</h2>
     </div>
   </div>
+  
+
   <div class="row justify-content-center">
     <div class="col-2">
       <h2>開催都道府県</h2>
@@ -88,6 +90,26 @@
   <div class="row justify-content-center">
     <div class="col-4">
       <h3><%= @plan.conditions%></h3>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-2">
+      <h2>参加者数</h2>
+    </div>
+    <div class="col-2">
+      <h2><%= @plan.child.length %>人</h2>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <h2>＜＜参加者一覧＞＞</h2>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-2">
+      <h2><% @plan.child.each do |c| %>
+            <p><%= c.user.nickname%></p>
+          <% end %></h2>
     </div>
   </div>
 </div>

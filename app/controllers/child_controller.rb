@@ -7,13 +7,15 @@ class ChildController < ApplicationController
     @user = current_user
     user_plan
     child_params
+    @index = 0
   end
 
   def create
     @child = Child.new(child_params)
     user_plan
     child_params
-    if @child.save
+    unless current_user.id == @plan.user.id
+      @child.save
       redirect_to root_path(id: @plan_id)
     else
       redirect_to root_path

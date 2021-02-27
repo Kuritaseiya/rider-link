@@ -1,17 +1,32 @@
 <div class="row justify-content-center">
   <%= form_with url: plan_child_index_path(@plan.id), model:Child.new, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
-    <div class="col-1">
+    <div class="col">
       <% if user_signed_in? %>
         <% unless current_user.id == @plan.user.id %>
-          <%# unless @child.user.id == @child.plan.id %>
+          <%if @plan.child.length == 0%>
             <button type="button" class="btn btn-outline-primary">
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.submit "このプランに参加する", class:"btn byn-primary" %>
             </button>
-          <%# else %>
-          <%# end %>
+          <% end %>
+          <% @plan.child.each do |c| %>
+            <% @index = 0%>
+            <% if c.user.id == current_user.id %>
+              <% @index += 1 %>
+            <% end %>
+          <% end %>
+          <% if @index == 0%>
+            <button type="button" class="btn btn-primary">
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.submit "このプランに参加する", class:"btn byn-primary btn-lg btnblock" %>
+            </button>
+          <% else %>
+            <button type="button" class="btn btn-primary btn-lg btn-block">
+              参加済みです
+            </button>
+          <% end %>
         <% end %>
       <% end %>
     </div>
   <% end %>
-  </div>
+</div>
