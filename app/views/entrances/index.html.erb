@@ -115,6 +115,7 @@
         <% if @plans.length != 0 %>
           <div class="card-header">
             <h2><div class="col-5">企画者名:<%= plan.user.nickname%></div>
+            <h2><div class="col-5">現在の参加者数:<%= plan.child.length%></div>
           </div>
         <div class="card-body">
           <p class="card-text"><h4>開催都道府県:<%= plan.prefecture.name%></h4></p>
