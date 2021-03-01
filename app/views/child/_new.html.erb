@@ -2,23 +2,27 @@
   <%= form_with url: plan_child_index_path(@plan.id), model:Child.new, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
     <div class="col">
       <% if user_signed_in? %>
+        <div class="row justify-content-center">
+            <% if user_signed_in? %>
+              <% if current_user.id == @plan.user.id %>
+                <button type="button" class="btn btn-outline-primary">
+                  <%= link_to 'このプランを削除する', plan_path, method: :delete %>
+                </button>
+              <% end %>
+            <% end %>
+        </div>
+
         <% unless current_user.id == @plan.user.id %>
-          <%if @plan.child.length == 0%>
-            <button type="button" class="btn btn-outline-primary">
-              <%= f.hidden_field :user_id, value: current_user.id %>
-              <%= f.submit "このプランに参加する", class:"btn byn-primary" %>
-            </button>
-          <% end %>
           <% @plan.child.each do |c| %>
             <% @index = 0%>
             <% if c.user.id == current_user.id %>
               <% @index += 1 %>
             <% end %>
           <% end %>
-          <% if @index == 0%>
+          <% if @index == 0 || @plan.child.length == 0%>
             <button type="button" class="btn btn-primary">
               <%= f.hidden_field :user_id, value: current_user.id %>
-              <%= f.submit "このプランに参加する", class:"btn byn-primary btn-lg btnblock" %>
+              <%= f.submit "このプランに参加する", class:"btn btn-primary" %>
             </button>
           <% else %>
             <button type="button" class="btn btn-primary btn-lg btn-block">

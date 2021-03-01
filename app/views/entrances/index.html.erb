@@ -1,166 +1,175 @@
+<head>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<%= render "header/header"%>
 <div class="bg-light">
-<div class="container-fluid">
-  <%= render "header/header"%>
 
-  <div class="container-fluid">
-    <div class="row w-100">
-      <div class="col">
-        <%= image_tag "rider-link.jpg", class:"w-100"%>
-      </div>
-    </div>
-  </div>
-
-  <div class="card-deck">
-    <div class="col-4">
-      <div class="card">
-        <div class="row justify-content-center">
-          <div class="col-6">
-            <%= image_tag "users_icon.jpg", class:"w-100"%>
-          </div>
-        </div>
-        <div class="card-body">
+<div class="container">
+<div id="carouselControls" class="carousel slide" data-ride="carousel">
+  
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="container">
+      <div class="row justify-content-center">
+      <div class="col-8">
+        <div class="card">
           <div class="row justify-content-center">
-            <div class="col-9">
-              <h4 class="card-title">1.まずはユーザー登録をしましょう</h4>
+            <div class="col-6">
+              <%= image_tag "users_icon.jpg", class:"w-100"%>
             </div>
           </div>
-          <p class="card-text">ユーザー登録をすることによって、ツーリングプランを企画や参加することができます</p>
-        </div>
-        <div class="card-footer">
-          <% unless user_signed_in? %>
-            <button type="button" class="btn btn-outline-primary">
-              <%= link_to "ログイン", new_user_session_path, class:"user-login"%>
-            </button>
-            <button type="button" class="btn btn-outline-primary">
-              <%= link_to "新規登録", new_user_registration_path, class:"user-new"%>
-            </button>
-          <% else %>
-            <button type="button" class="btn btn-outline-danger">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"text-danger" %>
-            </button>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="card">
-        <div class="row justify-content-center">
-          <div class="col">
-            <%= image_tag "plan_icon.jpg", class:"w-100"%>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="row justify-content-center">
-            <div class="col-10">
-              <h4 class="card-title">2.ツーリングプランを企画しましょう</h4>
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="col-9">
+                <h4 class="card-title">1.まずはユーザー登録をしましょう</h4>
+              </div>
             </div>
+            <p class="card-text">ユーザー登録をすることによって、ツーリングプランを企画や参加することができます</p>
           </div>
-          <p class="card-text">ツーリングの条件を指定し、実際に企画してみましょう。
-                               その際、条件等を設定することができます。
-                               ユーザー登録をしていない場合、企画することはできません。</p>
-        </div>
-        <div class="card-footer">
-          <% if user_signed_in? %>
-            <button type="button" class="btn btn-outline-primary">
-              <%= link_to "ツーリング予定を立てる", plan_index_path, class:"plan-create"%>
-            </button>
-          <% else %>
-            <button type="button" class="btn btn-outline-secondary">
-              ツーリング予定を立てる
-            </button>
-          <% end %>
+          <div class="card-footer">
+            <% unless user_signed_in? %>
+              <button type="button" class="btn btn-outline-primary">
+                <%= link_to "ログイン", new_user_session_path, class:"user-login"%>
+              </button>
+              <button type="button" class="btn btn-outline-primary">
+                <%= link_to "新規登録", new_user_registration_path, class:"user-new"%>
+              </button>
+            <% else %>
+              <button type="button" class="btn btn-outline-danger">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"text-danger" %>
+              </button>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-4">
-      <div class="card">
-        <div class="row justify-content-center">
-          <div class="col-6">
-            <%= image_tag "sanka_icon.jpg", class:"w-100"%>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="row justify-content-center">
-            <div class="col-9">
-              <h4 class="card-title">3.ツーリングに参加してみましょう</h4>
-            </div>
-          </div>
-          <p class="card-text">自分の条件にあったツーリングプランがあれば、参加意思を表明しましょう。</p>
-                               ツーリングプランの詳細から参加できます。</p>
-        </div>
-        <div class="card-footer">
-          <% if user_signed_in? %>
-            <button type="button" class="btn btn-outline-primary">
-              <%= link_to "ツーリングに参加する", plan_index_path, class:"plan-create"%>
-            </button>
-          <% else %>
-            <button type="button" class="btn btn-outline-secondary">
-              ツーリングに参加する
-            </button>
-          <% end %>
-        </div>
+      </div>
       </div>
     </div>
-  </div>
-
-  <div class="container-fluid">
+    <div class="carousel-item">
+    <div class="container">
     <div class="row justify-content-center">
-      <h1 class="display-3">TOURING PLAN</h1>
+      <div class="col-8">
+        <div class="card">
+          <div class="row justify-content-center">
+            <div class="col">
+              <%= image_tag "plan_icon.jpg", class:"w-100"%>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <h4 class="card-title">2.ツーリングプランを企画しましょう</h4>
+              </div>
+            </div>
+            <p class="card-text">ツーリングの条件を指定し、実際に企画してみましょう。
+                                 その際、条件等を設定することができます。
+                                 ユーザー登録をしていない場合、企画することはできません。</p>
+          </div>
+          <div class="card-footer">
+            <% if user_signed_in? %>
+              <button type="button" class="btn btn-outline-primary">
+                <%= link_to "ツーリング予定を立てる", plan_index_path, class:"plan-create"%>
+              </button>
+            <% else %>
+              <button type="button" class="btn btn-outline-secondary">
+                ツーリング予定を立てる
+              </button>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container-fluid">
-    <% @plans.each do |plan| %>
-      <div class="card" style="max-width: 100%;">
-        <% if @plans.length != 0 %>
-          <div class="card-header">
-            <h2><div class="col-5">企画者名:<%= plan.user.nickname%></div>
-            <h2><div class="col-5">現在の参加者数:<%= plan.child.length%></div>
+    </div>
+    </div>
+    <div class="carousel-item">
+    <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div class="card">
+          <div class="row justify-content-center">
+            <div class="col-6">
+              <%= image_tag "sanka_icon.jpg", class:"w-100"%>
+            </div>
           </div>
-        <div class="card-body">
-          <p class="card-text"><h4>開催都道府県:<%= plan.prefecture.name%></h4></p>
-          <p class="card-text"><h4>開催日時:<%= plan.year.name%>年<%= plan.moon.name%>月<%= plan.day.name%>日</h4></p>
-          <p class="card-text"><h4>対象年齢:<%= plan.age_min.name%>歳~<%= plan.age_max.name%>歳</h4></p>
-          <p class="card-text"><p><h4>排気量指定:<%= plan.power.name%></h4></p>
-          <p class="card-text"><h4>高速道路:<%= plan.highway.name%></h4></p>
-          <p class="card-text"><h4>メーカー指定:<%= plan.maker.name%></h4></p>
-        </div>
-        <!-- カードのフッター：card-footer -->
-        <div class="card-footer">
-          <button type="button" class="btn btn-outline-primary"><%= link_to "詳細を見る", plan_path(plan.id)%></button>
-        </div>
-        <% end %>
-      </div>
-    <% end %>
-    <div>
-
-    <div class="bg-dark text-white">
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-2 offset-1">
-          OFFICIAL SITE
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-2 offset-1">
-            <%= link_to "HONDA", "https://www.honda.co.jp/motor/"%>
-          </div>
-          <div class="col-2">
-            <%= link_to "SUZUKI", "https://www1.suzuki.co.jp/motor/"%>
-          </div>
-          <div class="col-2">
-            <%= link_to "Kawasaki", "https://www.kawasaki-motors.com/mc/"%>
-          </div>
-          <div class="col-2">
-            <%= link_to "YAMAHA", "https://www.yamaha-motor.co.jp/mc/"%>
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="col-9">
+                <h4 class="card-title">3.ツーリングに参加してみましょう</h4>
+              </div>
+            </div>
+            <p class="card-text">自分の条件にあったツーリングプランがあれば、参加意思を表明しましょう。</p>
+                                 ツーリングプランの詳細から参加できます。</p>
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   </div>
+  <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+    <div class="bg-dark"><span class="carousel-control-prev-icon" aria-hidden="true"></span></div>
+    <span class="sr-only">前に戻る</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+    <div class="bg-dark"><span class="carousel-control-next-icon" aria-hidden="true"></span></div>
+    <span class="sr-only">次に送る</span>
+  </a>
 </div>
 </div>
 
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 class="display-3"><b>TOURING PLAN</b></h1>
+    </div>
+    <div class="row">
+    <% @plans.each do |plan| %>
+        <div class="col-4 pb-5">
+          <div class="card" style="max-width: 100%;">
+            <% if @plans.length != 0 %>
+              <div class="card-header">
+                <h5><div class="col">企画者名:<%= plan.user.nickname%></div></h5>
+                <h5><div class="col">募集人数:<%= plan.participant.name%></div></h5>
+                <h5><div class="col">現在の参加者数:<% if (plan.participant.id + 1) == plan.child.length%>
+                                                      <b class="text-success"><%= plan.child.length%></b>
+                                                    <% elsif (plan.participant.id + 1) <= plan.child.length%>
+                                                      <b class="text-danger"><%= plan.child.length%></b>
+                                                    <% else %>
+                                                      <b class="text-primary"><%= plan.child.length%></b>
+                                                    <% end %></div></h5>
+              </div>
+            <div class="card-body">
+              <p class="card-text"><h6>開催都道府県:<%= plan.prefecture.name%></h6></p>
+              <p class="card-text"><h6>開催日時:<%= plan.year.name%>年<%= plan.moon.name%>月<%= plan.day.name%>日</h6></p>
+              <p class="card-text"><h6>対象年齢:<%= plan.age_min.name%>歳~<%= plan.age_max.name%>歳</h6></p>
+              <p class="card-text"><p><h6>排気量指定:<%= plan.power.name%></h6></p>
+              <p class="card-text"><h6>高速道路:<%= plan.highway.name%></h6></p>
+              <p class="card-text"><h6>メーカー指定:<%= plan.maker.name%></h6></p>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-outline-primary"><%= link_to "詳細を見る", plan_path(plan.id)%></button>
+                <% plan.child.each do |c| %>
+                  <% @index = 0%>
+                  <% if c.user.id == current_user.id %>
+                    <% @index += 1 %>
+                  <% end %>
+                <% end %>
+                <% unless @index == 0 || plan.child.length == 0%>
+                  <button type="button" class="btn btn-primary btn-lg btn-block">
+                    参加済みです
+                  </button>
+                <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+    </div>
+  </div>
 
+</div>
 
+<%= render "header/footer"%>
 
