@@ -6,8 +6,8 @@
             <% if user_signed_in? %>
               <% if current_user.id == @plan.user.id %>
                 <button type="button" class="btn btn-outline-primary">
-                <%= link_to 'このプランを削除する', plan_path, method: :delete %>
-              </button>
+                  <%= link_to 'このプランを削除する', plan_path, method: :delete %>
+                </button>
               <% end %>
             <% end %>
         </div>

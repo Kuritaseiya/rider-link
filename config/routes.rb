@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :child, only: [:new,:create]
   end
   resources :user, only: [:index]
+  resources :all_user, only: [:index,:show]
 end

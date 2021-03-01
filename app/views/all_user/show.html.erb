@@ -1,0 +1,31 @@
+<div class="bg-light">
+<%= render "header/header"%>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-4 mt-4">
+      <div class="card" style="max-width: 25rem;">
+        <div class="card-body">
+          <div class="row justify-content-center">
+            <h4 class="card-title">USER PROFILE</h4>
+          </div>
+          <div class="row justify-content-center">
+            <p class="card-text">ユーザープロフィール</p>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">ニックネーム:<%= @user.nickname %></li>
+          <li class="list-group-item">年齢:<%= @user.age%><span>歳</li>
+          <li class="list-group-item">あなたのバイク:<%= @user.mybike%></li>
+          <li class="list-group-item">あなたの性別:<%= @user.gender.name%></li>
+          <li class="list-group-item">あなたの出身地:<%= @user.prefecture.name%></li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">カード内リンク</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%#= render "header/footer"%>
+</div>
