@@ -1,64 +1,32 @@
 <div class="bg-light">
 <%= render "header/header"%>
-<div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-4">
-      <h1 class="display-1">USER PROFILE</h1>
-    </div>
-  </div>
-  <div class="col-4">
-    <h2><%= link_to "<-ホーム画面へ戻る", root_path%></h2>
-  </div>
-</div>
 
 <div class="container-fluid">
   <div class="row justify-content-center">
-    <div class="col-3 offset-md-1">
-      <h1>ニックネーム</h1>
-    </div>
-    <div class="col-3 offset-md-1">
-      <h1><%= @user.nickname %></h1>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-3 offset-md-1">
-      <h1>メールアドレス</h1>
-    </div>
-    <div class="col-3 offset-md-1">
-      <h1><%= @user.email%></h1>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-3 offset-md-1">
-      <h1>年齢</h1>
-    </div>
-    <div class="col-3 offset-md-1">
-      <h1><%= @user.age%><span>歳</span></h1>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-3 offset-md-1">
-      <h1>あなたのバイク</h1>
-    </div>
-    <div class="col-3 offset-md-1">
-      <h1><%= @user.mybike%></h1>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-3 offset-md-1">
-      <h1>あなたの性別</h1>
-    </div>
-    <div class="col-3 offset-md-1">
-      <h1><%= @user.gender.name%></h1>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-3 offset-md-1">
-      <h1>あなたの出身地</h1>
-    </div>
-    <div class="col-3 offset-md-1">
-      <h1><%= @user.prefecture.name%></h1>
+    <div class="col-4 mt-4">
+      <div class="card" style="max-width: 25rem;">
+        <div class="card-body">
+          <div class="row justify-content-center">
+            <h4 class="card-title">USER PROFILE</h4>
+          </div>
+          <div class="row justify-content-center">
+            <p class="card-text">ユーザープロフィール</p>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">ニックネーム:<%= @user.nickname %></li>
+          <li class="list-group-item">メールアドレス:<%= @user.email%></li>
+          <li class="list-group-item">年齢:<%= @user.age%><span>歳</li>
+          <li class="list-group-item">あなたのバイク:<%= @user.mybike%></li>
+          <li class="list-group-item">あなたの性別:<%= @user.gender.name%></li>
+          <li class="list-group-item">あなたの出身地:<%= @user.prefecture.name%></li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">カード内リンク</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<%= render "header/footer"%>
 </div>

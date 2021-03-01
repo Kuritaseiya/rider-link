@@ -2,115 +2,94 @@
 <%= render "header/header"%>
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-4">
-      <h2><%= link_to "<-ホーム画面へ戻る", root_path%></h2>
-    </div>
-    <div class="col-4">
-      <h1 class="display-4">ツーリングプラン詳細</h1>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-1">
-        <% if user_signed_in? %>
-          <% if current_user.id == @plan.user.id %>
-            <button type="button" class="btn btn-outline-primary">
-              <%= link_to 'このプランを削除する', plan_path, method: :delete %>
-            </button>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
 
 <%= render "child/new"%>
 
   <div class="row justify-content-center">
-    <div class="col-2">
-      <h2>開催者</h2>
-    </div>
-    <div class="col-2">
-      <h2><%= @plan.user.nickname %></h2>
+    <div class="col-4">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"><h4>開催者</h4></th>
+            <th scope="col"><h4><%= @plan.user.nickname %></h4></th>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th scope="col"><h4>募集人数</h4></td>
+            <th scope="col"><h4><%= @plan.participant.name %>人</h4></td>
+        </thead>
+        <thead>
+          <tr>
+            <th scope="col"><h4>開催都道府県</h4></td>
+            <th scope="col"><h4><%= @plan.prefecture.name%></h4></td>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th scope="col"><h4>開催日時</h4></td>
+            <th scope="col"><h4><%= @plan.year.name%>年<%= @plan.moon.name%>月<%= @plan.day.name%>日</h4></td>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th scope="col"><h4>排気量指定</h4></td>
+            <th scope="col"><h4><%= @plan.power.name%></h4></td>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th scope="col"><h4>高速道路</h4></td>
+            <th scope="col"><h4><%= @plan.highway.name%></h4></td>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th scope="col"><h4>年齢指定</h4></td>
+            <th scope="col"><h4><%= @plan.age_min.name%>歳~<%= @plan.age_max.name%>歳</h4></td>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th scope="col"><h4>メーカー指定</h4></td>
+            <th scope="col"><h4><%= @plan.maker.name%></h4></td>
+          </tr>
+        </thead>
+      </table>
     </div>
   </div>
-  <div class="row justify-content-center">
-    <div class="col-2">
-      <h2>募集人数</h2>
-    </div>
-    <div class="col-2">
-      <h2><%= @plan.participant.name %>人</h2>
-    </div>
-  </div>
-  
 
   <div class="row justify-content-center">
-    <div class="col-2">
-      <h2>開催都道府県</h2>
-    </div>
-    <div class="col-2">
-      <h2><%= @plan.prefecture.name%></h2>
+    <h2>------その他条件等------</h2>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h4><%= @plan.conditions%></h4>
     </div>
   </div>
+
   <div class="row justify-content-center">
-    <div class="col-2">
-      <h2>開催日時</h2>
-    </div>
-    <div class="col-2">
-      <h2><%= @plan.year.name%>年<%= @plan.moon.name%>月<%= @plan.day.name%>日</h2>
-    </div>
-  </div> 
-  <div class="row justify-content-center">
-    <div class="col-2">
-      <h2>排気量指定</h2>
-    </div>
-    <div class="col-2">
-      <h2><%= @plan.power.name%></h2>
-    </div>
-  </div> 
-  <div class="row justify-content-center">
-    <div class="col-2">
-      <h2>高速道路</h2>
-    </div>
-    <div class="col-2">
-      <h2><%= @plan.highway.name%></h2>
-    </div>
-  </div> 
-  <div class="row justify-content-center">
-    <div class="col-2">
-      <h2>年齢指定</h2>
-    </div>
-    <div class="col-2">
-      <h2><%= @plan.age_min.name%>歳~<%= @plan.age_max.name%>歳</h2>
-    </div>
-  </div> 
-  <div class="row justify-content-center">
-    <div class="col-2">
-      <h2>その他条件等</h2>
-    </div>
+    <h2>------参加者一覧------</h2>
   </div>
+
   <div class="row justify-content-center">
-    <div class="col-4">
-      <h3><%= @plan.conditions%></h3>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-2">
-      <h2>参加者数</h2>
-    </div>
-    <div class="col-2">
-      <h2><%= @plan.child.length %>人</h2>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-3">
-      <h2>＜＜参加者一覧＞＞</h2>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-2">
-      <h2><% @plan.child.each do |c| %>
-            <p><%= c.user.nickname%></p>
-          <% end %></h2>
+    <div class="col-5">
+      <h6><% @plan.child.each do |c| %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"><%= c.user.nickname%>さん</th>
+            <th scope="col"><%= c.user.gender.name%></th>
+            <th scope="col"><%= c.user.mybike%></th>
+            <th scope="col"><%= c.user.age%>歳</th>
+          </tr>
+        </thead>
+      </table>
+      <% end %></h6>
     </div>
   </div>
 </div>
 </div>
+
+<%= render "header/footer"%>
