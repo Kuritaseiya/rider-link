@@ -22,7 +22,13 @@
           <li class="list-group-item">あなたの出身地:<%= @user.prefecture.name%></li>
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">カード内リンク</a>
+          <% if user_signed_in? %>
+            <% if current_user.id == @user.id %>
+              <button type="button" class="btn btn-outline-primary">
+                <%= link_to 'プロフィールを編集する', edit_user_registration_path(@user.id), method: :get %>
+              </button>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
