@@ -13,6 +13,9 @@
             <p class="card-text">ユーザープロフィール</p>
           </div>
         </div>
+        <div class="card-body">
+          ユーザーID:<%= @user.id%>
+        </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ニックネーム:<%= @user.nickname %></li>
           <li class="list-group-item">年齢:<%= @user.age%><span>歳</li>
@@ -20,9 +23,6 @@
           <li class="list-group-item">あなたの性別:<%= @user.gender.name%></li>
           <li class="list-group-item">あなたの出身地:<%= @user.prefecture.name%></li>
         </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">カード内リンク</a>
-        </div>
       </div>
     </div>
   </div>
