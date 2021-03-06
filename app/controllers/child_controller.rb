@@ -14,7 +14,6 @@ class ChildController < ApplicationController
     @child = Child.new(child_params)
     user_plan
     child_params
-    binding.pry
     unless current_user.id == @plan.user.id
       @child.save
       redirect_to root_path(id: @plan_id)

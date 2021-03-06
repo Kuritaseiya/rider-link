@@ -1,10 +1,8 @@
+<%= render "header/header"%>
 <div class="bg-light">
 <div class="container-fluid">
   <div class="row justify-content-center">
     <h1 class="display-3">ユーザー新規登録</h1>
-  </div>
-  <div class="col-4">
-    <h2><%= link_to "<-ホーム画面へ戻る", root_path%></h2>
   </div>
 </div>
 
@@ -13,14 +11,14 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="row justify-content-center">
     <div class="col-4">
-      <%= f.label "ニックネーム" %><em><span class="red-text">※必須</span>(６文字まで)</em><br />
+      <%= f.label "ニックネーム" %><em><span class="badge badge-danger">必須</span>(１~６文字まで)</em>
       <%= f.text_field :nickname, autofocus: true, class:"form-control" %>
     </div>
   </div>
   
   <div class="row justify-content-center">
     <div class="col-4">
-      <%= f.label "Eメール" %><em><span class="red-text">※必須</span><br />
+      <%= f.label "Eメール" %><em><span class="badge badge-danger">必須</span>
       <%= f.text_field :email, class:"form-control" %>
     </div>
   </div>
@@ -29,7 +27,7 @@
     <div class="col-4">
       <%= f.label "パスワード" %>
       <% if @minimum_password_length %>
-      <em><span class="red-text">※必須</span>(<%= @minimum_password_length %> 文字)</em>
+      <em><span class="badge badge-danger">必須</span>(<%= @minimum_password_length %> 文字以上)</em>
       <% end %><br />
       <%= f.text_field :password, class:"form-control"%>
     </div>
@@ -37,21 +35,21 @@
 
   <div class="row justify-content-center">
     <div class="col-4">
-      <%= f.label "パスワード再確認" %><em><span class="red-text">※必須</span><br />
+      <em><%= f.label "パスワード再確認　" %><em><span class="badge badge-danger">必須</span></em>
       <%= f.text_field :password_confirmation, class:"form-control" %>
     </div>
   </div>
 
   <div class="row justify-content-center">
     <div class="col-4">
-      <%= f.label "年齢" %><em><span class="red-text">※半角数字のみ</span><br />
+      <%= f.label "年齢　" %><em><span class="badge badge-danger">必須</span>※半角数字のみ<br />
       <%= f.text_field :age, class:"form-control" %>
     </div>
   </div>
 
   <div class="row justify-content-center">
     <div class="col-4">
-      <%= f.label "所持しているバイク" %><em><span class="red-text">※必須</span><br />
+      <%= f.label "所持しているバイク　" %><em><span class="badge badge-primary">必須ではない</span><br />
       <%= f.text_field :mybike, class:"form-control" %>
     </div>
   </div>
@@ -59,14 +57,14 @@
   
   <div class="row justify-content-center">
     <div class="col-4">
-      <%= f.label "性別" %><em><span class="red-text">※必須</span><br />
+      <%= f.label "性別　" %><em><span class="badge badge-danger">必須</span>
       <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
 
   <div class="row justify-content-center">
     <div class="col-4">
-      <%= f.label "お住まいの都道府県" %><em><span class="red-text">※必須</span><br />
+      <%= f.label "お住まいの都道府県　" %><em><span class="badge badge-danger">必須</span>
       <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
@@ -77,3 +75,4 @@
 <% end %>
 </div>
 </div>
+<%= render "header/footer"%>

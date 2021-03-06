@@ -3,7 +3,9 @@
   <div class="row justify-content-center">
     <h1><b>登録者一覧</b></h1>
   </div>
-
+  <div class="row justify-content-center">
+    <h2>現在<span class="text-success"><%= @users.length%></span>ユーザー</h2>
+  </div>
   <div class="container-fluid">
     <div class="row">
       <% @users.each do |user| %>
@@ -29,9 +31,10 @@
       <% end %>
     </div>
   </div>
-  <%#= render "header/footer"%>
 </div>
-  
-    
-  
+<div class="fixed-bottom text-center" id="nav">
+  <%= render "header/footer"%>
+</div>
+
+
 
