@@ -12,7 +12,6 @@ class User < ApplicationRecord
     validates :email
     validates :password
     validates :age
-    validates :mybike
     validates :gender_id
     validates :prefecture_id
   end
@@ -30,5 +29,6 @@ class User < ApplicationRecord
   validates :gender_id,   numericality: { other_than: 1 }
   validates :prefecture_id, numericality: { other_than: 1 }
   validates :nickname, length: {minimum: 1}
+  validates :nickname, length: {maximum: 6}
 
 end
