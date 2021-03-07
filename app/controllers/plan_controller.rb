@@ -1,5 +1,5 @@
 class PlanController < ApplicationController
-  before_action :set_plan, only: [:show, :destroy]
+  before_action :set_plan, only: [:show, :edit, :update,:destroy]
 
   def index
     @plan = Plan.new
@@ -23,6 +23,17 @@ class PlanController < ApplicationController
       @plan.destroy
     end
     redirect_to root_path
+  end
+
+  def edit
+  end
+
+  def update
+    if @plan.update(plan_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private

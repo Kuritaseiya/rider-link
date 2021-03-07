@@ -1,0 +1,94 @@
+<div class="bg-light">
+<%= render "header/header"%>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <h1 class="display-3">ツーリング予定を編集する</h1>
+  </div>
+  <div class="col-4">
+    <h2><%= link_to "<-ホーム画面へ戻る", root_path%></h2>
+  </div>
+</div>
+<div class="container-fluid">
+  <%= form_with model: @plan, class: 'registration-main', local: true do |f| %>
+  <% if @plan.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% @plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "年" %><em>(開催日時例・2020-01-01)</em><br />
+        <%= f.collection_select(:year_id, Year.all, :id, :name, {}, {class:"form-control"}) %> 
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "月" %><em>(開催日時例・2020-01-01)</em><br />
+        <%= f.collection_select(:moon_id, Moon.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "日" %><em>(開催日時例・2020-01-01)</em><br />
+        <%= f.collection_select(:day_id, Day.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "排気量指定" %><em>※高速道路に乗る際は125cc未満参加不可にしてください</em><br />
+        <%= f.collection_select(:power_id, Power.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "高速道路" %>
+        <%= f.collection_select(:highway_id, Highway.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "メーカー指定" %>
+        <%= f.collection_select(:maker_id, Maker.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "参加できる最低年齢" %>
+        <%= f.collection_select(:age_min_id, AgeMin.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "参加できる最高年齢" %>
+        <%= f.collection_select(:age_max_id, AgeMax.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "開催する都道府県" %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "募集人数" %>
+        <%= f.collection_select(:participant_id, Participant.all, :id, :name, {}, {class:"form-control"}) %>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <%= f.label "その他条件等、集合場所、集合時間など" %>
+        <%= f.text_area :conditions, class:"form-control",placeholder:"例：大宮駅西口AM10:00に集合。緑のバイクが目印になります。"%>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <%= f.submit "計画を変更する", class:"btn byn-primary" %>
+    </div>
+  <% end %>
+</div>
+</div>
