@@ -1,12 +1,15 @@
 <div class="bg-light">
 <%= render "header/header"%>
 
-<div class="container-fluid">
-
-<%= render "child/new"%>
-
   <div class="row justify-content-center">
-    <div class="col-4">
+    <h1 class="display-3"><b>DETAILED PLAN</b></h1>
+  </div>
+
+  <%= render "child/new"%>
+
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-4 offset-md-2">
       <table class="table">
         <thead>
           <tr>
@@ -57,36 +60,55 @@
         </thead>
       </table>
     </div>
-  </div>
-
-  <div class="row justify-content-center">
-    <h2>------その他条件等------</h2>
-  </div>
-
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <h4><%= @plan.conditions%></h4>
+    <div class="col-5">
+      <div class="row justify-content-center">
+      <table class="table">
+        <thead>
+          <tr>
+            <h2>その他条件等</h2>
+          </tr>
+        </thead>
+      </table>
+      </div>
+        <div class="row justify-content-center">
+          <div class="col">
+            <div class="card" style="max-width: 100%;">
+              <div class="card-body">
+                <h5><%= @plan.conditions%></h5>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 
   <div class="row justify-content-center">
-    <h2>------参加者一覧------</h2>
+    <h2>参加者一覧</h2>
   </div>
 
   <div class="row justify-content-center">
-    <div class="col-5">
-      <h6><% @plan.child.each do |c| %>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col"><%= c.user.nickname%>さん</th>
-            <th scope="col"><%= c.user.gender.name%></th>
-            <th scope="col"><%= c.user.mybike%></th>
-            <th scope="col"><%= c.user.age%>歳</th>
-          </tr>
-        </thead>
-      </table>
+    <div class="col-6">
+      <% @plan.child.each do |c| %>
+      <div class="card mb-2" style="max-width: 100%;">
+        <div class="card-body">
+          <div class="row justify-contnt-center">
+            <h5><div class="col">　　<%= link_to c.user.nickname, all_user_path(c.user.id), class:"text-primary"%>さん
+                                 　　<%= c.user.gender.name%>
+                                 　　<%= c.user.mybike%>
+                                 　　<%= c.user.age%>歳</div></h5>
+          </div>
+        </div>
+      </div>
       <% end %></h6>
+      <% if @plan.child.length == 0%>
+        <div class="card mb-2" style="max-width: 100%;">
+          <div class="card-body">
+            <div class="row justify-contnt-center">
+              <h5><div class="col">まだ参加者はいません。</div></h5>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

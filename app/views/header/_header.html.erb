@@ -5,17 +5,24 @@
       <div class="text-white"><h2><%= link_to "RIDER-LINK",root_path, class:"text-white"%></h2></div>
     </div>
     
-    <div class="col-5">
       <% if user_signed_in? %>
-          <b><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"text-white" %></b>
-          <b>　<%= link_to current_user.nickname, user_index_path, class: "text-white" %></b>
           <b class="text-white">　<%= link_to "全ユーザー", all_user_index_path, class:"text-white"%></b>
           <b>　<%= link_to "ツーリング予定を立てる", plan_index_path, class:"text-white"%></b>
+          <div class="dropdown">
+            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <b>　<%= current_user.nickname%></b>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-item"><%= link_to "プロフィールを見る", user_index_path, class: "text-dark" %></div>
+              <div class="dropdown-item"><%= link_to "企画したプランを見る", my_plan_index_path, class:"text-dark"%></div>
+              <div class="dropdown-item"><%= link_to "参加したプランを見る", child_plan_index_path, class:"text-dark"%></div>
+              <div class="dropdown-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"text-dark" %></div>
+            </div>
+          </div>
       <% else %>
-          <b><%= link_to "ログイン", new_user_session_path, class:"text-white"%></b>
-          <b>　<%= link_to "新規登録", new_user_registration_path, class:"text-white"%></b>
+        <b><%= link_to "ログイン", new_user_session_path, class:"text-white"%></b>
+        <b>　<%= link_to "新規登録", new_user_registration_path, class:"text-white"%></b>
       <% end %>
-    </div>
   </div>
 </div>
 </div>
