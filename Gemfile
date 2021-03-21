@@ -67,3 +67,10 @@ gem 'pry-rails'
 gem 'active_hash'
 gem 'jquery-rails'
 gem 'rails-i18n'
+gem 'uglifier'
+gem 'webpacker','~> 4.0'
+
+
+group :production, :staging do
+  gem 'unicorn'
+end

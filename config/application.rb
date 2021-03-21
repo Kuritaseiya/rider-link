@@ -2,9 +2,16 @@ require_relative 'boot'
 
 require 'rails/all'
 
+require 'devise'
+
+require 'active_hash'
+
+require 'uglifier'
+
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(*Rails.groups)
+#Bundler.require(*Rails.groups)
 
 module RiderLink
   class Application < Rails::Application
