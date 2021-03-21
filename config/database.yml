@@ -14,9 +14,9 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
+  password: <%= Rails.application.credentials.db[:password] %>
   socket: /tmp/mysql.sock
-
+  host: localhost
 development:
   <<: *default
   database: rider_link_development
@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: rider_link_production
-  username: rider_link
-  password: <%= ENV['RIDER_LINK_DATABASE_PASSWORD'] %>
+  database: <%= Rails.application.credentials.db[:database] %>
+  username: root
+  password: 4z!|qQb/8tkd
+  socket: <%= Rails.application.credentials.db[:socket] %>
