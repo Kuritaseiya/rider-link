@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: <%= Rails.application.credentials.db[:database] %>
-  username: root
-  password: 4z!|qQb/8tkd
-  socket: <%= Rails.application.credentials.db[:socket] %>
+  database: rider_link_production
+  username: rider_link
+  password: <%= ENV['RIDER_LINK_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
