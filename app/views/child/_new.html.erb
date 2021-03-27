@@ -5,12 +5,12 @@
         <div class="row justify-content-center">
             <% if user_signed_in? %>
               <% if current_user.id == @plan.user.id %>
-              <div class="col-6">
+              <!--<div class="col-6">
                 <button type="button" class="btn btn-outline-danger">
-                  <%= link_to 'このプランを削除する', plan_path, method: :delete ,class: "text-danger"%>
+                  <%#= link_to 'このプランを削除する', plan_path(@plan), method: :delete ,class: "text-danger"%>
                 </button>
-              </div>
-              <div class="col-6">
+              </div>-->
+              <div class="col">
                 <button type="button" class="btn btn-outline-primary">
                   <%= link_to 'このプランを編集する', edit_plan_path, method: :get %>
                 </button>
