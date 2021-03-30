@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :child_plan, only: [:index]
   resources :company, only: [:index]
   resources :terms, only: [:index]
+  resources :question, only: [:index]
 end
