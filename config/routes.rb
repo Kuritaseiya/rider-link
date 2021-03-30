@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :all_user, only: [:index,:show]
   resources :my_plan, only: [:index]
   resources :child_plan, only: [:index]
+  resources :company, only: [:index]
 end
