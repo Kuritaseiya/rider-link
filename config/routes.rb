@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   resources :all_user, only: [:index,:show]
   resources :my_plan, only: [:index]
   resources :child_plan, only: [:index]
+  resources :company, only: [:index]
+  resources :terms, only: [:index]
+  resources :news, only: [:index]
+  resources :question, only: [:index]
 end
