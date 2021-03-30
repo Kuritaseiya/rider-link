@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :my_plan, only: [:index]
   resources :child_plan, only: [:index]
   resources :company, only: [:index]
+  resources :terms, only: [:index]
 end
