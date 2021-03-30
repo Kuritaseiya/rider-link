@@ -1,7 +1,39 @@
-<div class="bg-dark text-white">
-  <div class="container-fluid mt-4">
+<div class="bg-light text-dark mt-2">
+<div class="container-fluid ">
+  <div class="row justify-content-center">
+    <div class="col-2 offset-1">
+      <h6><b>ご利用ガイド</b></h6>
+      <p><%= link_to 'よくある質問', question_index_path%></p>
+    </div>
+    <div class="col-2">
+      <h6><b>ニュース</b></h6>
+      <p><%= link_to '最新情報', news_index_path%></p>
+    </div>
+    <div class="col-2">
+      <h6><b>サイト情報</b></h6>
+      <p><%= link_to '会社情報', company_index_path%></p>
+      <p><%= link_to '利用規約', terms_path%></p>
+    </div>
+    <div class="col-3">
+      <h6><b>中古バイク</b></h6>
+      <nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb bg-light">
+          <li class="breadcrumb-item"><a href="https://www.goobike.com/genre-01/index.html">ネイキッド</a></li>
+          <li class="breadcrumb-item"><a href="https://www.goobike.com/genre-02/index.html">スポーツレプリカ</a></li>
+          <li class="breadcrumb-item"><a href="https://www.goobike.com/genre-11/index.html">オールドルック</a></li>
+          <li class="breadcrumb-item"><a href="https://www.goobike.com/genre-04/index.html">オフロード</a></li>
+          <li class="breadcrumb-item"><a href="https://www.goobike.com/genre-07/index.html">ミニバイク</a></li>
+          <li class="breadcrumb-item"><a href="https://www.goobike.com/genre-06/index.html">アメリカン</a></li>
+          <li class="breadcrumb-item"><a href="https://www.goobike.com/genre-05/index.html">ツアラー</a></li>
+          <li class="breadcrumb-item"><a href="https://www.goobike.com/genre-08/index.html">スクーター</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container-fluid pt-0">
     <div class="row justify-content-center">
-      <div class="col-2 offset-1">
+      <div class="col-8">
       <b>OFFICIAL SITE</b>
       </div>
     </div>
@@ -15,9 +47,10 @@
       <div class="col-2">
         <b><%= link_to "Kawasaki", "https://www.kawasaki-motors.com/mc/"%></b>
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <b><%= link_to "YAMAHA", "https://www.yamaha-motor.co.jp/mc/"%></b>
       </div>
     </div>
   </div>
+</div>
 </div>

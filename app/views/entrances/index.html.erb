@@ -5,7 +5,7 @@
 </head>
 
 <%= render "header/header"%>
-<div class="bg-light">
+<div class="bg-dark">
 
 
 <div class="jumbotron jumbotron-fluid py-0">
@@ -45,7 +45,7 @@
 </div>
 
 
-<div class="container">
+<div class="container py-0">
 <div id="carouselControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -132,14 +132,17 @@
 </div>
 </div>
 
+
+
   <div class="container">
     <div class="row justify-content-center">
-      <h1 class="display-3"><b>TOURING PLAN</b></h1>
+      <h1 class="display-3"><b class="text-white">TOURING PLAN</b></h1>
     </div>
     <div class="row">
     <% @plans.each do |plan| %>
         <div class="col-4 pb-5">
           <div class="card" style="max-width: 100%;">
+          <div class="border-right border-bottom">
             <% if @plans.length != 0 %>
               <div class="card-header">
                 <h5><div class="col">企画者名:<%= plan.user.nickname%></div></h5>
@@ -177,6 +180,7 @@
               <button type="button" class="btn btn-outline-primary"><%= link_to "詳細を見る", plan_path(plan.id)%></button>
             </div>
             <% end %>
+          </div>
           </div>
         </div>
     <% end %>
