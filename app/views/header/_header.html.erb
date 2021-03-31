@@ -1,5 +1,5 @@
 <div class="bg-dark">
-<div class="container-fluid">
+<div class="container-fluid border-bottom">
   <div class="row align-items-center">
     <div class="col-7">
       <div class="text-white"><h2><%= link_to "RIDER-LINK",root_path, class:"text-white"%></h2></div>
@@ -23,6 +23,28 @@
         <b><%= link_to "ログイン", new_user_session_path, class:"text-white"%></b>
         <b>　<%= link_to "新規登録", new_user_registration_path, class:"text-white"%></b>
       <% end %>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="card m-3 bg-dark">
+    <div class="border-right border-bottom">
+      <h4><b><%= link_to '会社情報', company_index_path, class:"text-white"%></b></h3>
+    </div>
+  </div>
+  <div class="card m-3 bg-dark">
+    <div class="border-right border-bottom">
+      <h4><b><%= link_to '利用規約', terms_path, class:"text-white"%></b></h3>
+    </div>
+  </div>
+  <div class="card m-3 bg-dark">
+    <div class="border-right border-bottom">
+      <h4><b><%= link_to '最新情報', news_index_path, class:"text-white"%></b></h3>
+    </div>
+  </div>
+  <div class="card m-3 bg-dark">
+    <div class="border-right border-bottom">
+      <h4><b><%= link_to '使用技術', use_technology_index_path, class:"text-white"%></b></h3>
+    </div>
   </div>
 </div>
 </div>
