@@ -7,7 +7,14 @@
 <div class="bg-light">
 <%= render "header/header"%>
 
-<div class="container-fluid">
+  <nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">トップページ</a></li>
+      <li class="breadcrumb-item">ユーザープロフィール</li>
+    </ol>
+  <nav>
+
+<div class="container-fluid pb-5">
   <div class="row justify-content-center">
     <div class="col-4 mt-4">
       <div class="card" style="max-width: 25rem;">
@@ -33,7 +40,5 @@
     </div>
   </div>
 </div>
-  <div class="fixed-bottom text-center" id="nav">
-    <%= render "header/footer"%>
-  </div>
+  <%= render "header/footer"%>
 </div>
