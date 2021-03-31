@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :terms, only: [:index]
   resources :news, only: [:index]
   resources :question, only: [:index]
+  resources :use_technology, only: [:index]
 end

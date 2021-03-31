@@ -1,28 +1,100 @@
+<head>
+  <script src="https://kit.fontawesome.com/001bb60e3d.js" crossorigin="anonymous"></script>
+</head>
+
 <div class="bg-dark">
-<div class="container-fluid">
+<div class="container-fluid border-bottom">
   <div class="row align-items-center">
+    <div class="col-1">
+        <% if user_signed_in? %>
+          <div class="dropdown">
+            <button class=" navbar-toggler" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-align-justify text-white"></i>
+            </button>
+            <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+              <div class="col">
+                <div class="card mb-1">
+                  <div class="dropdown-item"><b><i class="fas fa-id-card"></i><%= link_to "プロフィールを見る", user_index_path, class: "text-dark" %></b></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-1">
+                  <div class="dropdown-item"><b><i class="fas fa-images"></i><%= link_to "企画したプランを見る", my_plan_index_path, class:"text-dark"%></b></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-1">
+                  <div class="dropdown-item"><b><i class="far fa-images"></i><%= link_to "参加したプランを見る", child_plan_index_path, class:"text-dark"%></b></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-1">
+                  <div class="dropdown-item"><b><i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"text-dark" %></b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
     <div class="col-7">
       <div class="text-white"><h2><%= link_to "RIDER-LINK",root_path, class:"text-white"%></h2></div>
     </div>
-    
       <% if user_signed_in? %>
           <b class="text-white">　<%= link_to "全ユーザー", all_user_index_path, class:"text-white"%></b>
           <b>　<%= link_to "ツーリング予定を立てる", plan_index_path, class:"text-white"%></b>
-          <div class="dropdown">
-            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <b>　<%= current_user.nickname%></b>
+          <!--<div class="dropdown">
+            <button class=" navbar-toggler" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-align-justify text-white"></i>
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <div class="dropdown-item"><%= link_to "プロフィールを見る", user_index_path, class: "text-dark" %></div>
-              <div class="dropdown-item"><%= link_to "企画したプランを見る", my_plan_index_path, class:"text-dark"%></div>
-              <div class="dropdown-item"><%= link_to "参加したプランを見る", child_plan_index_path, class:"text-dark"%></div>
-              <div class="dropdown-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"text-dark" %></div>
+            <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+              <div class="col">
+                <div class="card mb-1">
+                  <div class="dropdown-item"><b><i class="fas fa-id-card"></i><%= link_to "プロフィールを見る", user_index_path, class: "text-dark" %></b></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-1">
+                  <div class="dropdown-item"><b><i class="fas fa-images"></i><%= link_to "企画したプランを見る", my_plan_index_path, class:"text-dark"%></b></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-1">
+                  <div class="dropdown-item"><b><i class="far fa-images"></i><%= link_to "参加したプランを見る", child_plan_index_path, class:"text-dark"%></b></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-1">
+                  <div class="dropdown-item"><b><i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"text-dark" %></b></div>
+                </div>
+              </div>
             </div>
-          </div>
+          </div>-->
       <% else %>
         <b><%= link_to "ログイン", new_user_session_path, class:"text-white"%></b>
         <b>　<%= link_to "新規登録", new_user_registration_path, class:"text-white"%></b>
       <% end %>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="card m-3 bg-dark">
+    <div class="border-right border-bottom">
+      <h4><b><i class="fas fa-building text-white"></i><%= link_to '会社情報', company_index_path, class:"text-white"%></b></h3>
+    </div>
+  </div>
+  <div class="card m-3 bg-dark">
+    <div class="border-right border-bottom">
+      <h4><b><i class="fas fa-sticky-note text-white"></i><%= link_to '利用規約', terms_path, class:"text-white"%></b></h3>
+    </div>
+  </div>
+  <div class="card m-3 bg-dark">
+    <div class="border-right border-bottom">
+      <h4><b><i class="fas fa-newspaper text-white"></i><%= link_to '最新情報', news_index_path, class:"text-white"%></b></h3>
+    </div>
+  </div>
+  <div class="card m-3 bg-dark">
+    <div class="border-right border-bottom">
+      <h4><b><i class="fas fa-memory text-white"></i><%= link_to '使用技術', use_technology_index_path, class:"text-white"%></b></h3>
+    </div>
   </div>
 </div>
 </div>
