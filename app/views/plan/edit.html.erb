@@ -9,13 +9,14 @@
 <%= render "header/header"%>
 
 <div class="container-fluid">
-  <div class="row justify-content-center">
-    <h1 class="display-3">ツーリング予定を編集する</h1>
-  </div>
-  <div class="col-4">
-    <h2><%= link_to "<-ホーム画面へ戻る", root_path%></h2>
-  </div>
+  <nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">トップページ</a></li>
+      <li class="breadcrumb-item">ツーリングプラン作成</li>
+    </ol>
+  <nav>
 </div>
+
 <div class="container-fluid">
   <%= form_with model: @plan, class: 'registration-main', local: true do |f| %>
   <% if @plan.errors.any? %>
@@ -94,8 +95,9 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <%= f.submit "計画を変更する", class:"btn byn-primary" %>
+      <%= f.submit "計画を変更する", class:"btn btn-primary my-3" %>
     </div>
   <% end %>
 </div>
 </div>
+<%= render "header/footer"%>
