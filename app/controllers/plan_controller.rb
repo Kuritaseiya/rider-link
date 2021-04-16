@@ -15,7 +15,8 @@ class PlanController < ApplicationController
   end
 
   def show
-      set_plan
+    set_plan
+    @plans = Plan.order("created_at DESC")
   end
 
   def destroy
