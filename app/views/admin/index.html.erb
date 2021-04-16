@@ -1,0 +1,56 @@
+<div class="col">
+  <div class="bg-light"><h2><%= link_to "RIDER-LINK-ADMIN",root_path, class:"text-dark"%></h2></div>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-4">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupSelect01">管理情報</label>
+    </div>
+    <select class="custom-select" id="inputGroupSelect01">
+      <option selected><%= link_to "ツーリングプラン",admin_index_path, class:"text-dark"%></option>
+      <option value="1">ユーザー情報</option>
+      <option value="2">オプション2</option>
+      <option value="3">オプション3</option>
+    </select>
+  </div>
+  </div>
+</div>
+</div>
+
+
+<div class="container-fluid">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col"><h6><b>開催者</b></h6></th>
+      <th scope="col"><h6><b>募集人数</b></h6></th>
+      <th scope="col"><h6><b>開催都道府県</b></h6></td>
+      <th scope="col"><h6><b>開催日時</b></h6></td>
+      <th scope="col"><h6><b>年齢指定</b></h6></td>
+      <th scope="col"><h6><b>排気量指定</b></h6></td>
+      <th scope="col"><h6><b>高速道路</b></h6></td>
+      <th scope="col"><h6><b>メーカー指定</b></h6></td>
+    </tr>
+  </thead>
+  <% @plans.each do |plan| %>
+  <% if @plans.length != 0 %>
+  <tbody>
+    <tr>
+      <td><h6><%= plan.user.nickname %></h6></td>
+      <td><h6><%= plan.participant.name %></h6></td>
+      <td><h6><%= plan.prefecture.name %></h6></td>
+      <td><h6><%= plan.year.name %>年<%= plan.moon.name %>月<%= plan.day.name %>日</h6></td>
+      <td><h6><%= plan.age_min.name %>才~<%= plan.age_max.name %>才</h6></td>
+      <td><h6><%= plan.power.name %></h6></td>
+      <td><h6><%= plan.highway.name %></h6></td>
+      <td><h6><%= plan.maker.name %></h6></td>
+    </tr>
+  </tbody>
+  <% end %>
+  <% end %>
+</table>
+</div>
+<%= render "header/footer"%>
