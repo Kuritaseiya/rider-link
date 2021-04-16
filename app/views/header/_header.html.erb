@@ -14,6 +14,11 @@
             <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
               <div class="col">
                 <div class="card mb-1">
+                  <div class="dropdown-item"><b><i class="fas fa-id-card"></i><%= link_to "管理ページへ行く", admin_index_path, class: "text-dark" %></b></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-1">
                   <div class="dropdown-item"><b><i class="fas fa-id-card"></i><%= link_to "プロフィールを見る", user_index_path, class: "text-dark" %></b></div>
                 </div>
               </div>
@@ -40,7 +45,6 @@
       <div class="text-white"><h2><%= link_to "RIDER-LINK",root_path, class:"text-white"%></h2></div>
     </div>
       <% if user_signed_in? %>
-          <b class="text-white">　<%= link_to "全ユーザー", all_user_index_path, class:"text-white"%></b>
           <b>　<%= link_to "ツーリング予定を立てる", plan_index_path, class:"text-white"%></b>
       <% else %>
         <b><%= link_to "ログイン", new_user_session_path, class:"text-white"%></b>

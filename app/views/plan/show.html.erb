@@ -15,8 +15,41 @@
     </ol>
   <nav>
 
-<div class="row justify-content-center">
-  <div class="col">
+<div class="container-fluid mb-4">
+<div class="row">
+  <div class="col-5">
+    <div class="card" style="max-width: 100rem">
+      <div class="card-header">
+        <b>参加者一覧</b>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col">
+          <% @plan.child.each do |c| %>
+          <div class="card m-2" style="max-width: 100%;">
+            <div class="card-body">
+              <div class="row justify-contnt-center">
+                <h6><div class="col"><%= link_to c.user.nickname, all_user_path(c.user.id), class:"text-primary"%>さん
+                                     <%= c.user.gender.name%>
+                                     <%= c.user.mybike%>
+                                     <%= c.user.age%>歳</div></h6>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <% if @plan.child.length == 0%>
+            <div class="card m-2" style="max-width: 100%;">
+              <div class="card-body">
+                <div class="row justify-contnt-center">
+                  <h6><div class="col">まだ参加者はいません。</div></h6>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-7">
   <div class="card" style="max-width: 100rem">
     <div class="card-header">
       <b>プラン詳細</b>
@@ -24,64 +57,64 @@
     <div class="card-body">
     <%= render "child/new"%>
     <div class="container-fluid my-5">
-      <div class="row">
-        <div class="col-4 offset-md-1">
+      <div class="row justify-content-center">
+        <div class="col-12">
           <table class="table">
             <thead>
               <tr>
-                <th scope="col"><h4>開催者</h4></th>
-                <th scope="col"><h4><%= @plan.user.nickname %></h4></th>
+                <th scope="col"><h6>開催者</h6></th>
+                <th scope="col"><h6><%= @plan.user.nickname %></h6></th>
               </tr>
             </thead>
             <thead>
               <tr>
-                <th scope="col"><h4>募集人数</h4></td>
-                <th scope="col"><h4><%= @plan.participant.name %>人</h4></td>
+                <th scope="col"><h6>募集人数</h6></td>
+                <th scope="col"><h6><%= @plan.participant.name %>人</h6></td>
             </thead>
             <thead>
               <tr>
-                <th scope="col"><h4>開催都道府県</h4></td>
-                <th scope="col"><h4><%= @plan.prefecture.name%></h4></td>
+                <th scope="col"><h6>開催都道府県</h6></td>
+                <th scope="col"><h6><%= @plan.prefecture.name%></h6></td>
               </tr>
             </thead>
             <thead>
               <tr>
-                <th scope="col"><h4>開催日時</h4></td>
-                <th scope="col"><h4><%= @plan.year.name%>年<%= @plan.moon.name%>月<%= @plan.day.name%>日</h4></td>
+                <th scope="col"><h6>開催日時</h6></td>
+                <th scope="col"><h6><%= @plan.year.name%>年<%= @plan.moon.name%>月<%= @plan.day.name%>日</h6></td>
               </tr>
             </thead>
             <thead>
               <tr>
-                <th scope="col"><h4>排気量指定</h4></td>
-                <th scope="col"><h4><%= @plan.power.name%></h4></td>
+                <th scope="col"><h6>排気量指定</h6></td>
+                <th scope="col"><h6><%= @plan.power.name%></h6></td>
               </tr>
             </thead>
             <thead>
               <tr>
-                <th scope="col"><h4>高速道路</h4></td>
-                <th scope="col"><h4><%= @plan.highway.name%></h4></td>
+                <th scope="col"><h6>高速道路</h6></td>
+                <th scope="col"><h6><%= @plan.highway.name%></h6></td>
               </tr>
             </thead>
             <thead>
               <tr>
-                <th scope="col"><h4>年齢指定</h4></td>
-                <th scope="col"><h4><%= @plan.age_min.name%>歳~<%= @plan.age_max.name%>歳</h4></td>
+                <th scope="col"><h6>年齢指定</h6></td>
+                <th scope="col"><h6><%= @plan.age_min.name%>歳~<%= @plan.age_max.name%>歳</h6></td>
               </tr>
             </thead>
             <thead>
               <tr>
-                <th scope="col"><h4>メーカー指定</h4></td>
-                <th scope="col"><h4><%= @plan.maker.name%></h4></td>
+                <th scope="col"><h6>メーカー指定</h6></td>
+                <th scope="col"><h6><%= @plan.maker.name%></h6></td>
               </tr>
             </thead>
           </table>
         </div>
-        <div class="col-5 offset-md-1">
+        <div class="col">
           <div class="row justify-content-center">
           <table class="table">
             <thead>
               <tr>
-                <h2>その他条件等</h2>
+                <h5>その他条件等</h5>
               </tr>
             </thead>
           </table>
@@ -97,40 +130,11 @@
             </div>
         </div>
       </div>
-      </div>
-      <div class="row justify-content-center">
-        <h2>参加者一覧</h2>
-      </div>
-    
-      <div class="row justify-content-center">
-        <div class="col-6">
-          <% @plan.child.each do |c| %>
-          <div class="card mb-2" style="max-width: 100%;">
-            <div class="card-body">
-              <div class="row justify-contnt-center">
-                <h5><div class="col">　　<%= link_to c.user.nickname, all_user_path(c.user.id), class:"text-primary"%>さん
-                                     　　<%= c.user.gender.name%>
-                                     　　<%= c.user.mybike%>
-                                     　　<%= c.user.age%>歳</div></h5>
-              </div>
-            </div>
-          </div>
-          <% end %></h6>
-          <% if @plan.child.length == 0%>
-            <div class="card mb-2" style="max-width: 100%;">
-              <div class="card-body">
-                <div class="row justify-contnt-center">
-                  <h5><div class="col">まだ参加者はいません。</div></h5>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
     </div>
     </div>
   </div>
   </div>
+</div>
 </div>
 
 <%= render "header/footer"%>

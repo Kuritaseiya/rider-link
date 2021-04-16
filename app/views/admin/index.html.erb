@@ -1,0 +1,50 @@
+<head>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+  <script src="https://kit.fontawesome.com/001bb60e3d.js" crossorigin="anonymous"></script>
+</head>
+
+<%= render "header/admin_header"%>
+
+<div class="container-fluid">
+  <nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">ツーリングプラン一覧</li>
+    </ol>
+  <nav>
+</div>
+
+<div class="container-fluid">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col"><h6><b>開催者</b></h6></th>
+      <th scope="col"><h6><b>募集人数</b></h6></th>
+      <th scope="col"><h6><b>開催都道府県</b></h6></td>
+      <th scope="col"><h6><b>開催日時</b></h6></td>
+      <th scope="col"><h6><b>年齢指定</b></h6></td>
+      <th scope="col"><h6><b>排気量指定</b></h6></td>
+      <th scope="col"><h6><b>高速道路</b></h6></td>
+      <th scope="col"><h6><b>メーカー指定</b></h6></td>
+    </tr>
+  </thead>
+  <% @plans.each do |plan| %>
+  <% if @plans.length != 0 %>
+  <tbody>
+    <tr>
+      <td><h6><%= plan.user.nickname %></h6></td>
+      <td><h6><%= plan.participant.name %></h6></td>
+      <td><h6><%= plan.prefecture.name %></h6></td>
+      <td><h6><%= plan.year.name %>年<%= plan.moon.name %>月<%= plan.day.name %>日</h6></td>
+      <td><h6><%= plan.age_min.name %>才~<%= plan.age_max.name %>才</h6></td>
+      <td><h6><%= plan.power.name %></h6></td>
+      <td><h6><%= plan.highway.name %></h6></td>
+      <td><h6><%= plan.maker.name %></h6></td>
+    </tr>
+  </tbody>
+  <% end %>
+  <% end %>
+</table>
+</div>
+<%= render "header/footer"%>

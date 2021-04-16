@@ -1,0 +1,37 @@
+<head>
+  <script src="https://kit.fontawesome.com/001bb60e3d.js" crossorigin="anonymous"></script>
+</head>
+
+<div class="col">
+<div class="container-fluid border-bottom">
+  <div class="row align-items-center">
+    <div class="col-1">
+        <% if user_signed_in? %>
+          <div class="dropdown">
+            <button class=" navbar-toggler" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-align-justify text-dark"></i>
+            </button>
+            <div class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
+              <div class="col">
+                <div class="card mb-1 bg-dark">
+                  <div class="dropdown-item"><b><i class="fas fa-id-card text-white"></i><%= link_to "一般ページへ行く", root_path, class: "text-white" %></b></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-1 bg-dark">
+                  <div class="dropdown-item"><b><i class="fas fa-id-card text-white"></i><%= link_to "ユーザーページへ行く", admin_user_index_path, class: "text-white" %></b></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-1 bg-dark">
+                  <div class="dropdown-item"><b><i class="fas fa-images text-white"></i><%= link_to "ツーリングプラン一覧ページへ行く", admin_index_path, class:"text-white"%></b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+    <div class="bg-light"><h2><%= link_to "RIDER-LINK-ADMIN",root_path, class:"text-dark"%></h2></div>
+  </div>
+</div>
+</div>
