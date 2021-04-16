@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :question, only: [:index]
   resources :use_technology, only: [:index]
   resources :admin, only: [:index]
+  resources :admin_user, only: [:index]
 end
