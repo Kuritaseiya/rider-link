@@ -10,27 +10,27 @@
 <div class="container-fluid">
   <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item">お知らせ一覧</li>
+      <li class="breadcrumb-item">お知らせ詳細</li>
     </ol>
   <nav>
 </div>
 
-<div class="row justify-content-end">
-  <div class="col-4">
-    <h3><%= link_to "お知らせを作成する->", new_infometion_path, class: "text-dark" %></h3>
-  </div>
-</div>
-
 <div class="container-fluid">
-<% @infometions.each do |i| %>
-  <% if @infometions.length != 0 %>
+  <h2>作成年月日:<%= @infometion.year.name%>/<%= @infometion.moon.name%>/<%= @infometion.day.name%></h2>
+  <h2>お知らせのタイトル:<%= @infometion.title %></h2>
   <div class="row justify-content-center">
-    <div class="col-8 py-1">
-      <p><h2 class="border"><%= i.year.name%>/<%= i.moon.name%>/<%= i.day.name%>
-         <span class="offset-4"><%= link_to i.title, infometion_path(i.id), class: "text-primary" %></span></p></h2>
-    </div>
+    <h2>本文</h2>
   </div>
-  <% end %>
-<% end %>
+  <div class="col">
+      <div class="row justify-content-center">
+        <div class="col">
+          <div class="card" style="max-width: 100%;">
+            <div class="card-body">
+              <h2><%= @infometion.text %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
 
