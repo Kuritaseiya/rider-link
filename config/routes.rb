@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   resources :use_technology, only: [:index]
   resources :admin, only: [:index]
   resources :admin_user, only: [:index]
+  resources :infometion, only: [:index,:new,:create,:show]
+  resources :infometion_all, only: [:index,:show]
 end

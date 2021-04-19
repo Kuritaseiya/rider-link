@@ -1,6 +1,7 @@
 class Moon < ActiveHash::Base
   include ActiveHash::Associations
   has_many :plans
+  has_many :infometions
 
   self.data = [
     {id: 1, name:'--'},

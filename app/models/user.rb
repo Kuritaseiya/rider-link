@@ -3,7 +3,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :plans, dependent: :destroy
-  has_many :child
+  has_many :child, dependent: :destroy
   belongs_to :gender
   belongs_to :prefecture
 
