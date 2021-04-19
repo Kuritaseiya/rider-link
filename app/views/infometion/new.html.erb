@@ -1,0 +1,64 @@
+<head>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+  <script src="https://kit.fontawesome.com/001bb60e3d.js" crossorigin="anonymous"></script>
+</head>
+
+<%= render "header/admin_header"%>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" role="navigation">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">お知らせ作成</li>
+          </ol>
+        <nav> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mb-4">
+  <div class="row justify-content-center">
+    <%= form_for(@infometion, url: infometion_index_path) do |f| %>
+      <div class="row justify-content-center">
+        <div class="col">
+          <%= f.label "年" %><em>(開催日時例・2020-01-01)</em><br />
+          <%= f.collection_select(:year_id, Year.all, :id, :name, {}, {class:"form-control"}) %> 
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col">
+          <%= f.label "月" %><em>(開催日時例・2020-01-01)</em><br />
+          <%= f.collection_select(:moon_id, Moon.all, :id, :name, {}, {class:"form-control"}) %>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col">
+          <%= f.label "日" %><em>(開催日時例・2020-01-01)</em><br />
+          <%= f.collection_select(:day_id, Day.all, :id, :name, {}, {class:"form-control"}) %>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col">
+          <%= f.label "タイトル" %><em><span class="badge badge-danger">必須</span></em>
+          <%= f.text_field :title, autofocus: true, class:"form-control",placeholder:"タイトルになります" %>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col">
+          <%= f.label "本文" %><em><span class="badge badge-danger">必須</span></em>
+          <%= f.text_area :text, autofocus: true, class:"form-control",placeholder:"本文になります" %>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10 my-3">
+          <%= f.submit "お知らせを作成する", class:"btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
