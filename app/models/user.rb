@@ -4,6 +4,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :plans, dependent: :destroy
   has_many :child, dependent: :destroy
+  has_many :contact_us_user
   belongs_to :gender
   belongs_to :prefecture
 
