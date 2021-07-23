@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :infometion, only: [:index,:new,:create,:show]
   resources :infometion_all, only: [:index,:show]
   resources :contact_us_user, only: [:new,:create]
+  resources :contact_us, only:[:index,:show]
 end
